@@ -1,48 +1,39 @@
-package HerokuAppTests;
+package heroku.tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.*;
+import heroku.pages.FileUploadPage;
+import heroku.pages.HerokuAppSite;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
+import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class SeleniumWebDriverManagerTests {
-    private static final String URL = "https://the-internet.herokuapp.com/";
+public class AllTests extends BaseTests {
+    private FileUploadPage fileUploadPage;
+    private HerokuAppSite herokuAppSite;
+
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
 
-    WebDriver driver;
-
-    @BeforeEach
-    public void preparingTests() {
-        WebDriverManager.chromedriver().setup(); // installing WebDriver
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(URL);
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS); // Added timeouts for all tests
-    }
-
     @Test
-    @DisplayName("Checking current URL")
+    @DisplayName("Current URL")
     public void urlCheck() {
         Assertions.assertEquals("https://the-internet.herokuapp.com/", driver.getCurrentUrl());
     }
 
     @Test
-    @DisplayName("Checking title of the page")
+    @DisplayName("Title of the page")
     public void titleCheck() {
         Assertions.assertEquals("The Internet", driver.getTitle());
     }
 
     @Test
-    @DisplayName("Checking successful login message")
+    @DisplayName("Successful login message")
     public void successfulLoginCheck() {
         driver.findElement(By.xpath("//a[text()='Form Authentication']")).click();
         driver.findElement(By.id("username")).sendKeys(LOGIN);
@@ -54,7 +45,7 @@ public class SeleniumWebDriverManagerTests {
     }
 
     @Test
-    @DisplayName("Checking successful logout")
+    @DisplayName("Successful logout")
     public void successfulLogoutCheck() {
         driver.findElement(By.xpath("//a[text()='Form Authentication']")).click();
         driver.findElement(By.id("username")).sendKeys(LOGIN);
@@ -67,7 +58,7 @@ public class SeleniumWebDriverManagerTests {
     }
 
     @Test
-    @DisplayName("Checking adding elements")
+    @DisplayName("Adding elements")
     public void addingElements() {
         driver.findElement(By.xpath("//a[text()='Add/Remove Elements']")).click();
         // need to check that we dont have elements before adding a new one
@@ -79,7 +70,7 @@ public class SeleniumWebDriverManagerTests {
     }
 
     @Test
-    @DisplayName("Checking deleting elements")
+    @DisplayName("Deleting elements")
     public void deletingElements() {
         driver.findElement(By.xpath("//a[text()='Add/Remove Elements']")).click();
         driver.findElement(By.xpath("//button[text()='Add Element']")).click();
@@ -92,7 +83,7 @@ public class SeleniumWebDriverManagerTests {
     }
 
     @Test
-    @DisplayName("Checking checkboxes")
+    @DisplayName("Checkboxes")
     public void selectingCheckboxes() {
         driver.findElement(By.xpath("//a[text()='Checkboxes']")).click();
         String checkboxPath = "//input[@type='checkbox']";
@@ -111,7 +102,7 @@ public class SeleniumWebDriverManagerTests {
     }
 
     @Test
-    @DisplayName("Checking dropdown")
+    @DisplayName("Dropdown")
     public void selectElementDropdown() {
         driver.findElement(By.xpath("//a[text()='Dropdown']")).click();
         Assertions.assertTrue(driver.findElement(By.xpath("//option[text()='Please select an option']")).isSelected());
@@ -122,9 +113,10 @@ public class SeleniumWebDriverManagerTests {
     }
 
     @Test
+    @DisplayName("Heading")
     public void headingCheck() {
         // explicit wait example
-        WebDriverWait expWait = new WebDriverWait(driver, 4, 500);
+        WebDriverWait expWait = new WebDriverWait(driver, Duration.ofSeconds(3));
         expWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".heading")));
 
         Assertions.assertEquals("Welcome to the-internet", driver.findElement(By.cssSelector(".heading")).getText());
@@ -132,17 +124,12 @@ public class SeleniumWebDriverManagerTests {
     }
 
     @Test
-    public void fileUploadCheck() {
-        File file = new File("src/horus logo.jpg");
-        driver.findElement(By.xpath("//a[text()='File Upload']")).click();
-        driver.findElement(By.id("file-upload")).sendKeys(file.getAbsolutePath());
-        driver.findElement(By.className("button")).click();
+    @DisplayName("File upload")
+    public void checkFileUpload() {
+        fileUploadPage = new FileUploadPage(driver);
+        fileUploadPage.open();
+        fileUploadPage.uploadFile("src/horus logo.jpg");
 
-        Assertions.assertTrue(driver.findElement(By.xpath("//h3[text()='File Uploaded!']")).isDisplayed());
-    }
-
-    @AfterEach
-    public void closingBrowser() {
-        driver.quit();
+        Assertions.assertEquals("File Uploaded!", fileUploadPage.getTitle());
     }
 }
