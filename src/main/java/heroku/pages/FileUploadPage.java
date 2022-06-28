@@ -12,7 +12,7 @@ import java.time.Duration;
 public class FileUploadPage {
 
     @FindBy(linkText = "File Upload")
-    private WebElement fileUpdate;
+    private WebElement fileUpdateLink;
 
     @FindBy(id = "file-upload")
     private WebElement chooseFileButton;
@@ -29,7 +29,7 @@ public class FileUploadPage {
     }
 
     public void open() {
-        fileUpdate.click();
+        fileUpdateLink.click();
     }
 
     public void uploadFile(String path) {

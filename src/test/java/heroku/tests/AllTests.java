@@ -2,6 +2,8 @@ package heroku.tests;
 
 import heroku.pages.FileUploadPage;
 import heroku.pages.HerokuAppSite;
+import heroku.pages.LoginPage;
+import org.apache.commons.logging.Log;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +18,7 @@ import java.util.List;
 public class AllTests extends BaseTests {
     private FileUploadPage fileUploadPage;
     private HerokuAppSite herokuAppSite;
+    private LoginPage loginPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -35,26 +38,21 @@ public class AllTests extends BaseTests {
     @Test
     @DisplayName("Successful login message")
     public void successfulLoginCheck() {
-        driver.findElement(By.xpath("//a[text()='Form Authentication']")).click();
-        driver.findElement(By.id("username")).sendKeys(LOGIN);
-        driver.findElement(By.id("password")).sendKeys(PASSWORD);
-        driver.findElement(By.className("radius")).click();
-
-        String successfulLoginMessage = driver.findElement(By.id("flash")).getText();
-        Assertions.assertTrue(successfulLoginMessage.contains("You logged into a secure area!"));
+        loginPage = new LoginPage(driver);
+        loginPage.open();
+        loginPage.login(LOGIN, PASSWORD);
+        Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
     }
 
     @Test
     @DisplayName("Successful logout")
     public void successfulLogoutCheck() {
-        driver.findElement(By.xpath("//a[text()='Form Authentication']")).click();
-        driver.findElement(By.id("username")).sendKeys(LOGIN);
-        driver.findElement(By.id("password")).sendKeys(PASSWORD);
-        driver.findElement(By.className("radius")).click();
-        driver.findElement(By.xpath("//i[@class='icon-2x icon-signout']")).click();
+        loginPage = new LoginPage(driver);
+        loginPage.open();
+        loginPage.login(LOGIN, PASSWORD);
+        loginPage.logout();
 
-        String successfulLogoutMessage = driver.findElement(By.id("flash")).getText();
-        Assertions.assertTrue(successfulLogoutMessage.contains("You logged out of the secure area!"));
+        Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged out of the secure area!"));
     }
 
     @Test
