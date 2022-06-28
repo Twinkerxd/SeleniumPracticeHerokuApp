@@ -7,6 +7,7 @@ import org.apache.commons.logging.Log;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+@ExtendWith(TestListener.class)
 public class AllTests extends BaseTests {
     private FileUploadPage fileUploadPage;
     private HerokuAppSite herokuAppSite;
@@ -36,11 +38,12 @@ public class AllTests extends BaseTests {
     }
 
     @Test
-    @DisplayName("Successful login message")
+    @DisplayName("Successful login")
     public void successfulLoginCheck() {
         loginPage = new LoginPage(driver);
         loginPage.open();
         loginPage.login(LOGIN, PASSWORD);
+
         Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
     }
 

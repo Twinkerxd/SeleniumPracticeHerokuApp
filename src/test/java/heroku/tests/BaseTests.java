@@ -1,15 +1,20 @@
 package heroku.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Allure;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestWatcher;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class BaseTests {
-    public WebDriver driver;
+public class BaseTests implements TestWatcher {
+    public static WebDriver driver;
 
     @BeforeEach
     public void setUp() {
@@ -22,7 +27,8 @@ public class BaseTests {
 
     @AfterEach
     public void tearDown() {
+        Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png",
+                ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
         driver.quit();
     }
-
 }
