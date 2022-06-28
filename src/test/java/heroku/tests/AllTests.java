@@ -1,9 +1,10 @@
 package heroku.tests;
 
-import heroku.pages.FileUploadPage;
-import heroku.pages.HerokuAppSite;
-import heroku.pages.LoginPage;
-import org.apache.commons.logging.Log;
+import core.BaseSeleniumTests;
+import org.junit.jupiter.api.extension.TestWatcher;
+import pages.FileUploadPage;
+import pages.MainPage;
+import pages.LoginPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,10 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-@ExtendWith(TestListener.class)
-public class AllTests extends BaseTests {
+public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private FileUploadPage fileUploadPage;
-    private HerokuAppSite herokuAppSite;
     private LoginPage loginPage;
 
     private static final String LOGIN = "tomsmith";
@@ -40,9 +39,7 @@ public class AllTests extends BaseTests {
     @Test
     @DisplayName("Successful login")
     public void successfulLoginCheck() {
-        loginPage = new LoginPage(driver);
-        loginPage.open();
-        loginPage.login(LOGIN, PASSWORD);
+        loginPage = new MainPage().getLoginPage().login(LOGIN,PASSWORD);
 
         Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
     }
@@ -50,10 +47,7 @@ public class AllTests extends BaseTests {
     @Test
     @DisplayName("Successful logout")
     public void successfulLogoutCheck() {
-        loginPage = new LoginPage(driver);
-        loginPage.open();
-        loginPage.login(LOGIN, PASSWORD);
-        loginPage.logout();
+        loginPage = new MainPage().getLoginPage().login(LOGIN,PASSWORD).logout();
 
         Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged out of the secure area!"));
     }
@@ -127,8 +121,7 @@ public class AllTests extends BaseTests {
     @Test
     @DisplayName("File upload")
     public void checkFileUpload() {
-        fileUploadPage = new FileUploadPage(driver);
-        fileUploadPage.open();
+        fileUploadPage = new MainPage().getFileUploadPage();
         fileUploadPage.uploadFile("src/horus logo.jpg");
 
         Assertions.assertEquals("File Uploaded!", fileUploadPage.getTitle());

@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="gitignor">
-      <change afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/TestListener.java" afterDir="false" />
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added Allure report">
+      <change afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroku/pages/FileUploadPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/FileUploadPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroku/pages/HerokuAppSite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/heroku/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/BaseTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/TestListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +39,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Junk/Projects/SeleniumPracticeHerokuApp/src/test/java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_directory_selection": "C:/Junk/Projects/SeleniumPracticeHerokuApp/src/test/java",
+    "last_opened_file_path": "C:/Junk/Projects/Youtube-qa-project",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Junk\Projects\SeleniumPracticeHerokuApp\src\test\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="core" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.AllTests">
@@ -55,7 +63,7 @@
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="PATTERN" value="core.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -66,7 +74,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.successfulLoginCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.checkFileUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -76,7 +84,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
+      <option name="METHOD_NAME" value="checkFileUpload" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests.successfulLoginCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
       <option name="METHOD_NAME" value="successfulLoginCheck" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests.successfulLogoutCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
+      <option name="METHOD_NAME" value="successfulLogoutCheck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,6 +141,8 @@
       <list>
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.AllTests.successfulLoginCheck" />
+        <item itemvalue="JUnit.AllTests.successfulLogoutCheck" />
+        <item itemvalue="JUnit.AllTests.checkFileUpload" />
         <item itemvalue="JUnit.SeleniumWebDriverManagerTests" />
       </list>
     </recent_temporary>
@@ -121,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656401833460</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Allure report">
+      <created>1656406602125</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656406602125</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +186,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignor" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignor" />
+    <MESSAGE value="Added Allure report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Allure report" />
   </component>
 </project>

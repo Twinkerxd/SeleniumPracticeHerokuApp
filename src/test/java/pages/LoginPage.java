@@ -1,11 +1,12 @@
-package heroku.pages;
+package pages;
 
+import core.BaseSeleniumPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BaseSeleniumPage {
     @FindBy(linkText = "Form Authentication")
     private WebElement formAuthenticationLink;
 
@@ -25,22 +26,20 @@ public class LoginPage {
     private WebElement flashMessage;
 
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage() {
         PageFactory.initElements(driver, this);
     }
 
-    public void open() {
-        formAuthenticationLink.click();
-    }
-
-    public void login(String username, String password) {
+    public LoginPage login(String username, String password) {
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         submitButton.click();
+        return this;
     }
 
-    public void logout() {
+    public LoginPage logout() {
         logoutButton.click();
+        return this;
     }
 
     public String getFlashMessage() {

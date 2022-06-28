@@ -1,5 +1,6 @@
-package heroku.pages;
+package pages;
 
+import core.BaseSeleniumPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.time.Duration;
 
-public class FileUploadPage {
+public class FileUploadPage extends BaseSeleniumPage {
 
     @FindBy(linkText = "File Upload")
     private WebElement fileUpdateLink;
@@ -23,13 +24,8 @@ public class FileUploadPage {
     @FindBy(css = "h3")
     private WebElement title;
 
-    public FileUploadPage(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+    public FileUploadPage() {
         PageFactory.initElements(driver, this);
-    }
-
-    public void open() {
-        fileUpdateLink.click();
     }
 
     public void uploadFile(String path) {
