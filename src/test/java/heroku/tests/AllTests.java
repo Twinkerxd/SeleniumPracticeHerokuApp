@@ -41,7 +41,6 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Successful login")
     public void successfulLoginCheck() {
         loginPage = new MainPage().getLoginPage().login(LOGIN,PASSWORD);
-
         Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
     }
 
@@ -49,7 +48,6 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Successful logout")
     public void successfulLogoutCheck() {
         loginPage = new MainPage().getLoginPage().login(LOGIN,PASSWORD).logout();
-
         Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged out of the secure area!"));
     }
 
@@ -100,7 +98,6 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         Assertions.assertTrue(driver.findElement(By.xpath("//option[text()='Please select an option']")).isSelected());
         driver.findElement(By.id("dropdown")).click();
         driver.findElement(By.xpath("//option[text()='Option 1']")).click();
-
         Assertions.assertTrue(driver.findElement(By.xpath("//option[text()='Option 1']")).isSelected());
     }
 
@@ -110,7 +107,6 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         // explicit wait example
         WebDriverWait expWait = new WebDriverWait(driver, Duration.ofSeconds(3));
         expWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".heading")));
-
         Assertions.assertEquals("Welcome to the-internet", driver.findElement(By.cssSelector(".heading")).getText());
         //driver.findElement(By.cssSelector(".heading")).getText().equals("Welcome to the-internet")
     }
@@ -120,7 +116,6 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     public void checkFileUpload() {
         fileUploadPage = new MainPage().getFileUploadPage();
         fileUploadPage.uploadFile("src/horus logo.jpg");
-
         Assertions.assertEquals("File Uploaded!", fileUploadPage.getTitle());
     }
 }
