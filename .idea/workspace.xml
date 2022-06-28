@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added Allure report">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/heroku/pages/FileUploadPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/FileUploadPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/heroku/pages/HerokuAppSite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/heroku/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/TestListener.java" afterDir="false" />
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added BaseSeleniumPage, code refactor">
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/TestListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656406602125</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added BaseSeleniumPage, code refactor">
+      <created>1656422260315</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656422260315</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +188,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignor" />
     <MESSAGE value="Added Allure report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Allure report" />
+    <MESSAGE value="Added BaseSeleniumPage, code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added BaseSeleniumPage, code refactor" />
   </component>
 </project>
