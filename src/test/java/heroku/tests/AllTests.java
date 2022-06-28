@@ -1,18 +1,18 @@
 package heroku.tests;
 
 import core.BaseSeleniumTests;
-import org.junit.jupiter.api.extension.TestWatcher;
-import pages.FileUploadPage;
-import pages.MainPage;
-import pages.LoginPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.AddElementsPage;
+import pages.FileUploadPage;
+import pages.LoginPage;
+import pages.MainPage;
 
 import java.time.Duration;
 import java.util.List;
@@ -20,6 +20,7 @@ import java.util.List;
 public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private FileUploadPage fileUploadPage;
     private LoginPage loginPage;
+    private AddElementsPage addElementsPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -55,26 +56,22 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @Test
     @DisplayName("Adding elements")
     public void addingElements() {
-        driver.findElement(By.xpath("//a[text()='Add/Remove Elements']")).click();
-        // need to check that we dont have elements before adding a new one
-        Assertions.assertTrue(driver.findElements(By.className("added-manually")).isEmpty());
-
-        driver.findElement(By.xpath("//button[text()='Add Element']")).click();
-        Assertions.assertEquals(1, driver.findElements(By.className("added-manually")).size());
-
+        addElementsPage = new MainPage().getAddElementsPage();
+        Assertions.assertEquals(0, addElementsPage.deleteButtonsList().size());
+        addElementsPage.addElement();
+        Assertions.assertEquals(1, addElementsPage.deleteButtonsList().size());
     }
 
     @Test
     @DisplayName("Deleting elements")
     public void deletingElements() {
-        driver.findElement(By.xpath("//a[text()='Add/Remove Elements']")).click();
-        driver.findElement(By.xpath("//button[text()='Add Element']")).click();
-        driver.findElement(By.xpath("//button[text()='Add Element']")).click();
-
-        // deleting one element
-        driver.findElement(By.className("added-manually")).click();
-
-        Assertions.assertEquals(1, driver.findElements(By.className("added-manually")).size());
+        addElementsPage = new MainPage().getAddElementsPage();
+        Assertions.assertEquals(0, addElementsPage.deleteButtonsList().size());
+        addElementsPage.addElement();
+        addElementsPage.addElement();
+        addElementsPage.addElement();
+        addElementsPage.deleteElement();
+        Assertions.assertEquals(2, addElementsPage.deleteButtonsList().size());
     }
 
     @Test

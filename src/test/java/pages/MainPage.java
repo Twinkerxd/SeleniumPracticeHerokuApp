@@ -7,14 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends BaseSeleniumPage {
 
-    @FindBy(linkText = "File Upload")
+    @FindBy(xpath = "//a[@href='/upload']")
     private WebElement fileUpdateLink;
 
     @FindBy(xpath = "//a[@href='/login']")
-    private WebElement formAuthentication;
+    private WebElement formAuthenticationLink;
+
+    @FindBy(xpath = "//a[@href='/add_remove_elements/']")
+    private WebElement addElementsLink;
 
     public MainPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public FileUploadPage getFileUploadPage() {
@@ -23,7 +26,12 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     public LoginPage getLoginPage() {
-        formAuthentication.click();
+        formAuthenticationLink.click();
         return new LoginPage();
+    }
+
+    public AddElementsPage getAddElementsPage() {
+        addElementsLink.click();
+        return new AddElementsPage();
     }
 }
