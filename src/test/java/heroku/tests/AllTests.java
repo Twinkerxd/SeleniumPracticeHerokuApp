@@ -6,36 +6,16 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.AddElementsPage;
-import pages.FileUploadPage;
-import pages.LoginPage;
-import pages.MainPage;
-
-import java.time.Duration;
-import java.util.List;
+import pages.*;
 
 public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private FileUploadPage fileUploadPage;
     private LoginPage loginPage;
     private AddElementsPage addElementsPage;
+    private CheckboxesPage checkboxesPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
-
-    @Test
-    @DisplayName("Current URL")
-    public void urlCheck() {
-        Assertions.assertEquals("https://the-internet.herokuapp.com/", driver.getCurrentUrl());
-    }
-
-    @Test
-    @DisplayName("Title of the page")
-    public void titleCheck() {
-        Assertions.assertEquals("The Internet", driver.getTitle());
-    }
 
     @Test
     @DisplayName("Successful login")
@@ -75,20 +55,17 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @Test
     @DisplayName("Checkboxes")
     public void selectingCheckboxes() {
-        driver.findElement(By.xpath("//a[text()='Checkboxes']")).click();
-        String checkboxPath = "//input[@type='checkbox']";
-        List<WebElement> checkboxes = driver.findElements(By.xpath(checkboxPath));
+        checkboxesPage = new MainPage().getCheckBoxesPage();
+        Assertions.assertFalse(checkboxesPage.isCheckboxChecked(1));
+        Assertions.assertTrue(checkboxesPage.isCheckboxChecked(2));
 
-        Assertions.assertFalse(checkboxes.get(0).isSelected());
-        Assertions.assertTrue(checkboxes.get(1).isSelected());
+        checkboxesPage.clickCheckbox(1);
+        Assertions.assertTrue(checkboxesPage.isCheckboxChecked(1));
+        Assertions.assertTrue(checkboxesPage.isCheckboxChecked(2));
 
-        driver.findElement(By.xpath(checkboxPath)).click();
-        Assertions.assertTrue(checkboxes.get(0).isSelected());
-        Assertions.assertTrue(checkboxes.get(1).isSelected());
-
-        driver.findElement(By.xpath(checkboxPath)).click();
-        Assertions.assertFalse(checkboxes.get(0).isSelected());
-        Assertions.assertTrue(checkboxes.get(1).isSelected());
+        checkboxesPage.clickCheckbox(2);
+        Assertions.assertTrue(checkboxesPage.isCheckboxChecked(1));
+        Assertions.assertFalse(checkboxesPage.isCheckboxChecked(2));
     }
 
     @Test
@@ -99,16 +76,6 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         driver.findElement(By.id("dropdown")).click();
         driver.findElement(By.xpath("//option[text()='Option 1']")).click();
         Assertions.assertTrue(driver.findElement(By.xpath("//option[text()='Option 1']")).isSelected());
-    }
-
-    @Test
-    @DisplayName("Heading")
-    public void headingCheck() {
-        // explicit wait example
-        WebDriverWait expWait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        expWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".heading")));
-        Assertions.assertEquals("Welcome to the-internet", driver.findElement(By.cssSelector(".heading")).getText());
-        //driver.findElement(By.cssSelector(".heading")).getText().equals("Welcome to the-internet")
     }
 
     @Test

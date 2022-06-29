@@ -16,6 +16,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/add_remove_elements/']")
     private WebElement addElementsLink;
 
+    @FindBy(xpath = "//a[@href='/checkboxes']")
+    private WebElement checkboxesLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -33,5 +36,10 @@ public class MainPage extends BaseSeleniumPage {
     public AddElementsPage getAddElementsPage() {
         addElementsLink.click();
         return new AddElementsPage();
+    }
+
+    public CheckboxesPage getCheckBoxesPage() {
+        checkboxesLink.click();
+        return new CheckboxesPage();
     }
 }
