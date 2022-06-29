@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.TestWatcher;
-import org.openqa.selenium.By;
 import pages.*;
 
 public class AllTests extends BaseSeleniumTests implements TestWatcher {
@@ -13,6 +12,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private LoginPage loginPage;
     private AddElementsPage addElementsPage;
     private CheckboxesPage checkboxesPage;
+    private DropDownPage dropDownPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -71,11 +71,9 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @Test
     @DisplayName("Dropdown")
     public void selectElementDropdown() {
-        driver.findElement(By.xpath("//a[text()='Dropdown']")).click();
-        Assertions.assertTrue(driver.findElement(By.xpath("//option[text()='Please select an option']")).isSelected());
-        driver.findElement(By.id("dropdown")).click();
-        driver.findElement(By.xpath("//option[text()='Option 1']")).click();
-        Assertions.assertTrue(driver.findElement(By.xpath("//option[text()='Option 1']")).isSelected());
+        dropDownPage = new MainPage().getDropDownPage();
+        dropDownPage.setDropdownValue(1);
+        Assertions.assertTrue(dropDownPage.isOptionSelected(1));
     }
 
     @Test

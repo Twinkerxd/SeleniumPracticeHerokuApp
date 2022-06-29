@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="spacespace">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" afterDir="false" />
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Checkboxes refactor, deleted some tests">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/DropDownPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
     </list>
@@ -57,7 +58,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests">
+  <component name="RunManager" selected="JUnit.AllTests.selectElementDropdown">
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -73,6 +74,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AllTests.checkFileUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
+      <option name="METHOD_NAME" value="checkFileUpload" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AllTests.deletingElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -84,6 +101,22 @@
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
       <option name="METHOD_NAME" value="deletingElements" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests.selectElementDropdown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
+      <option name="METHOD_NAME" value="selectElementDropdown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,45 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.successfulLoginCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="core.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="successfulLoginCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AllTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AllTests.selectElementDropdown" />
+        <item itemvalue="JUnit.AllTests.checkFileUpload" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.AllTests.selectingCheckboxes" />
         <item itemvalue="JUnit.AllTests.deletingElements" />
-        <item itemvalue="JUnit.AllTests.test" />
-        <item itemvalue="JUnit.AllTests.successfulLoginCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656427505189</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Checkboxes refactor, deleted some tests">
+      <created>1656489202331</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656489202331</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,7 +248,8 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Add/delete elements refactor" />
     <MESSAGE value="spacespace" />
-    <option name="LAST_COMMIT_MESSAGE" value="spacespace" />
+    <MESSAGE value="Checkboxes refactor, deleted some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkboxes refactor, deleted some tests" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

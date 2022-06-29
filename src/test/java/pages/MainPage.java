@@ -19,6 +19,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/checkboxes']")
     private WebElement checkboxesLink;
 
+    @FindBy(xpath = "//a[@href='/dropdown']")
+    private WebElement dropDownLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -41,5 +44,10 @@ public class MainPage extends BaseSeleniumPage {
     public CheckboxesPage getCheckBoxesPage() {
         checkboxesLink.click();
         return new CheckboxesPage();
+    }
+
+    public DropDownPage getDropDownPage() {
+        dropDownLink.click();
+        return new DropDownPage();
     }
 }
