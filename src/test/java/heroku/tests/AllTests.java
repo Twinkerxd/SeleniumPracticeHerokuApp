@@ -1,6 +1,7 @@
 package heroku.tests;
 
 import core.BaseSeleniumTests;
+import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private AddElementsPage addElementsPage;
     private CheckboxesPage checkboxesPage;
     private DropDownPage dropDownPage;
+    private BrokenImagesPage brokenImagesPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -82,5 +84,18 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         fileUploadPage = new MainPage().getFileUploadPage();
         fileUploadPage.uploadFile("src/horus logo.jpg");
         Assertions.assertEquals("File Uploaded!", fileUploadPage.getTitle());
+    }
+
+    @Test
+    @DisplayName("Broken images")
+    public void brokenImages() {
+        brokenImagesPage = new MainPage().getBrokenImagesPage();
+        SoftAssertions softAssertions = new SoftAssertions();
+
+        for (String src : brokenImagesPage.getAllSrcImg()) {
+            softAssertions.assertThat(brokenImagesPage.isImageHere(src))
+                    .isTrue();
+        }
+        softAssertions.assertAll();
     }
 }

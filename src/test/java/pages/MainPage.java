@@ -22,6 +22,12 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/dropdown']")
     private WebElement dropDownLink;
 
+    @FindBy(xpath = "//a[@href='/basic_auth']")
+    private WebElement basicAuthLink;
+
+    @FindBy(xpath = "//a[@href='/broken_images']")
+    private WebElement brokenImagesPage;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -49,5 +55,15 @@ public class MainPage extends BaseSeleniumPage {
     public DropDownPage getDropDownPage() {
         dropDownLink.click();
         return new DropDownPage();
+    }
+
+    public BasicAuthPage getBasicAuthPage() {
+        basicAuthLink.click();
+        return new BasicAuthPage();
+    }
+
+    public BrokenImagesPage getBrokenImagesPage() {
+        brokenImagesPage.click();
+        return new BrokenImagesPage();
     }
 }

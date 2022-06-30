@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -31,7 +32,17 @@ public class BaseSeleniumTests implements TestWatcher {
     public void tearDown() {
         Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
-        driver.close(); // process in system
+        //driver.close(); // process in system
         driver.quit(); // browser
+    }
+
+
+    public static boolean isDisplayed(WebElement webElement) {
+        try {
+            webElement.isDisplayed();
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
     }
 }
