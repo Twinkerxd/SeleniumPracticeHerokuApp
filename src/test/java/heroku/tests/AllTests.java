@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.TestWatcher;
+import org.openqa.selenium.JavascriptExecutor;
 import pages.*;
 
 public class AllTests extends BaseSeleniumTests implements TestWatcher {
@@ -16,6 +17,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private DropDownPage dropDownPage;
     private BrokenImagesPage brokenImagesPage;
     private EntryAdPage entryAdPage;
+    private FloatingMenuPage floatingMenuPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -114,5 +116,15 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         entryAdPage.closeButtonClick();
         Assertions.assertFalse(entryAdPage.isModalWindowUp());
 
+    }
+
+    @Test
+    @DisplayName("Floating Menu")
+    public void floatingMenu() {
+        floatingMenuPage = new MainPage().getFloatingMenuPage();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 4275)");
+        Assertions.assertEquals("top: 4237px;", floatingMenuPage.getCords());
     }
 }

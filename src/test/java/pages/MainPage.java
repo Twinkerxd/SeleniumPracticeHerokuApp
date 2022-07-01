@@ -26,10 +26,13 @@ public class MainPage extends BaseSeleniumPage {
     private WebElement basicAuthLink;
 
     @FindBy(xpath = "//a[@href='/broken_images']")
-    private WebElement brokenImagesPage;
+    private WebElement brokenImagesLink;
 
     @FindBy(xpath = "//a[@href='/entry_ad']")
-    private WebElement entryAd;
+    private WebElement entryAdLink;
+
+    @FindBy(xpath = "//a[@href='/floating_menu']")
+    private WebElement floatingMenuLink;
 
     public MainPage() {
         PageFactory.initElements(driver, this);
@@ -66,12 +69,17 @@ public class MainPage extends BaseSeleniumPage {
     }
 
     public BrokenImagesPage getBrokenImagesPage() {
-        brokenImagesPage.click();
+        brokenImagesLink.click();
         return new BrokenImagesPage();
     }
 
     public EntryAdPage getEntryAdPage() {
-        entryAd.click();
+        entryAdLink.click();
         return new EntryAdPage();
+    }
+
+    public FloatingMenuPage getFloatingMenuPage() {
+        floatingMenuLink.click();
+        return new FloatingMenuPage();
     }
 }

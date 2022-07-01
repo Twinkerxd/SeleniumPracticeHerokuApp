@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added broken images test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/EntryAdPage.java" afterDir="false" />
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added Entry Ad test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/FloatingMenuPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
@@ -57,7 +57,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests.closeAds">
+  <component name="RunManager" selected="JUnit.AllTests.newTest">
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -105,7 +105,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.tesName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.newTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -115,7 +115,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="tesName" />
+      <option name="METHOD_NAME" value="newTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -139,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AllTests.newTest" />
         <item itemvalue="JUnit.AllTests.closeAds" />
         <item itemvalue="JUnit.AllTests.brokenImages" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.AllTests.testName" />
-        <item itemvalue="JUnit.AllTests.tesName" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656590811513</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Entry Ad test">
+      <created>1656660186371</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1656660186371</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,7 +271,8 @@
     <MESSAGE value="Checkboxes refactor, deleted some tests" />
     <MESSAGE value="Dropdown refactor and pom.xml changes" />
     <MESSAGE value="Added broken images test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added broken images test" />
+    <MESSAGE value="Added Entry Ad test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Entry Ad test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
