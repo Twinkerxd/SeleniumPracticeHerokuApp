@@ -18,6 +18,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private BrokenImagesPage brokenImagesPage;
     private EntryAdPage entryAdPage;
     private FloatingMenuPage floatingMenuPage;
+    private HorizontalSliderPage horizontalSliderPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -134,5 +135,16 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 4275)");
         Assertions.assertEquals("top: 4237px;", floatingMenuPage.getCords());
+    }
+
+    @Test
+    @DisplayName("Horizontal Slider")
+    public void horizontalSlider() {
+        horizontalSliderPage = new MainPage().getHorizontalSliderPage();
+
+        horizontalSliderPage.setSliderValue("right", 5);
+        Assertions.assertEquals(5, horizontalSliderPage.getSliderValue());
+        horizontalSliderPage.setSliderValue("left", 0);
+        Assertions.assertEquals(0, horizontalSliderPage.getSliderValue());
     }
 }

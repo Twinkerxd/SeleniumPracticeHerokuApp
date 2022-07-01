@@ -34,6 +34,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/floating_menu']")
     private WebElement floatingMenuLink;
 
+    @FindBy(xpath = "//a[@href='/horizontal_slider']")
+    private WebElement horizontalSliderLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -81,5 +84,10 @@ public class MainPage extends BaseSeleniumPage {
     public FloatingMenuPage getFloatingMenuPage() {
         floatingMenuLink.click();
         return new FloatingMenuPage();
+    }
+
+    public HorizontalSliderPage getHorizontalSliderPage() {
+        horizontalSliderLink.click();
+        return new HorizontalSliderPage();
     }
 }
