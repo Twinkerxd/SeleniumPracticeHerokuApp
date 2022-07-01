@@ -28,6 +28,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/broken_images']")
     private WebElement brokenImagesPage;
 
+    @FindBy(xpath = "//a[@href='/entry_ad']")
+    private WebElement entryAd;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -65,5 +68,10 @@ public class MainPage extends BaseSeleniumPage {
     public BrokenImagesPage getBrokenImagesPage() {
         brokenImagesPage.click();
         return new BrokenImagesPage();
+    }
+
+    public EntryAdPage getEntryAdPage() {
+        entryAd.click();
+        return new EntryAdPage();
     }
 }

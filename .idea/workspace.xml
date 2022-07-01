@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Dropdown refactor and pom.xml changes">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasicAuthPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BrokenImagesPage.java" afterDir="false" />
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added broken images test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/EntryAdPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
     </list>
@@ -60,7 +57,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests">
+  <component name="RunManager" selected="JUnit.AllTests.closeAds">
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -76,7 +73,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.checkFileUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.brokenImages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +83,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="checkFileUpload" />
+      <option name="METHOD_NAME" value="brokenImages" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.selectElementDropdown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.closeAds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -102,7 +99,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="selectElementDropdown" />
+      <option name="METHOD_NAME" value="closeAds" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AllTests.closeAds" />
+        <item itemvalue="JUnit.AllTests.brokenImages" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.AllTests.testName" />
         <item itemvalue="JUnit.AllTests.tesName" />
-        <item itemvalue="JUnit.AllTests.checkFileUpload" />
-        <item itemvalue="JUnit.AllTests.selectElementDropdown" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656493396014</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added broken images test">
+      <created>1656590811513</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1656590811513</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +263,8 @@
     <MESSAGE value="spacespace" />
     <MESSAGE value="Checkboxes refactor, deleted some tests" />
     <MESSAGE value="Dropdown refactor and pom.xml changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dropdown refactor and pom.xml changes" />
+    <MESSAGE value="Added broken images test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added broken images test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

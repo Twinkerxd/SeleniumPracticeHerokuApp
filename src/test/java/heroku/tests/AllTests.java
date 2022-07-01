@@ -15,6 +15,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private CheckboxesPage checkboxesPage;
     private DropDownPage dropDownPage;
     private BrokenImagesPage brokenImagesPage;
+    private EntryAdPage entryAdPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -97,5 +98,21 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
                     .isTrue();
         }
         softAssertions.assertAll();
+    }
+
+    @Test
+    @DisplayName("Entry Ad")
+    public void closeAds() throws InterruptedException {
+        entryAdPage = new MainPage().getEntryAdPage();
+
+        do {
+            entryAdPage.clickHereButtonClick();
+            entryAdPage.refreshPage();
+            Thread.sleep(2000);
+        } while (!entryAdPage.isModalWindowUp());
+
+        entryAdPage.closeButtonClick();
+        Assertions.assertFalse(entryAdPage.isModalWindowUp());
+
     }
 }
