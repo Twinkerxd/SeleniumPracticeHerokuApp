@@ -19,6 +19,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private EntryAdPage entryAdPage;
     private FloatingMenuPage floatingMenuPage;
     private HorizontalSliderPage horizontalSliderPage;
+    private HoversPage hoversPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -119,7 +120,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         do {
             entryAdPage.clickHereButtonClick();
             entryAdPage.refreshPage();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } while (!entryAdPage.isModalWindowUp());
 
         entryAdPage.closeButtonClick();
@@ -146,5 +147,19 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         Assertions.assertEquals(5, horizontalSliderPage.getSliderValue());
         horizontalSliderPage.setSliderValue("left", 0);
         Assertions.assertEquals(0, horizontalSliderPage.getSliderValue());
+
+//        Another way to slide with mouse click
+//        WebElement e = driver.findElement(By.className("Class name of Dragger"));
+//        Actions move = new Actions(driver);
+//        move.moveToElement(e).clickAndHold().moveByOffset(0,250).release().perform();
+    }
+
+    @Test
+    public void hoverAndClick() {
+        hoversPage = new MainPage().getHoversPage();
+
+        hoversPage.mouseOver();
+        hoversPage.viewProfileClick();
+        Assertions.assertEquals("Not Found", hoversPage.getTitle());
     }
 }

@@ -37,6 +37,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/horizontal_slider']")
     private WebElement horizontalSliderLink;
 
+    @FindBy(xpath = "//a[@href='/hovers']")
+    private WebElement hoversLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -89,5 +92,10 @@ public class MainPage extends BaseSeleniumPage {
     public HorizontalSliderPage getHorizontalSliderPage() {
         horizontalSliderLink.click();
         return new HorizontalSliderPage();
+    }
+
+    public HoversPage getHoversPage() {
+        hoversLink.click();
+        return new HoversPage();
     }
 }
