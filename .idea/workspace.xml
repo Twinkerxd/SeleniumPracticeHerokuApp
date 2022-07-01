@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added slider test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/HoversPage.java" afterDir="false" />
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added hover test and some refactor">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/InfiniteScrollPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
@@ -57,7 +57,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests.hoverAndClick">
+  <component name="RunManager" selected="JUnit.AllTests.newTest">
     <configuration name="AllTests.closeAds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -140,10 +140,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AllTests.newTest" />
         <item itemvalue="JUnit.AllTests.hoverAndClick" />
         <item itemvalue="JUnit.AllTests.closeAds" />
         <item itemvalue="JUnit.AllTests.horizontalSlider" />
-        <item itemvalue="JUnit.AllTests.newTest" />
         <item itemvalue="JUnit.AllTests.notSuccessfulLogin" />
       </list>
     </recent_temporary>
@@ -269,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656670517268</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added hover test and some refactor">
+      <created>1656673153842</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1656673153842</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +304,8 @@
     <MESSAGE value="Added floating menu test" />
     <MESSAGE value="Added unsuccessful login test" />
     <MESSAGE value="Added slider test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added slider test" />
+    <MESSAGE value="Added hover test and some refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hover test and some refactor" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

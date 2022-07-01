@@ -40,6 +40,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/hovers']")
     private WebElement hoversLink;
 
+    @FindBy(xpath = "//a[@href='/infinite_scroll']")
+    private WebElement infiniteScrollLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -97,5 +100,10 @@ public class MainPage extends BaseSeleniumPage {
     public HoversPage getHoversPage() {
         hoversLink.click();
         return new HoversPage();
+    }
+
+    public InfiniteScrollPage getInfiniteScrollPage() {
+        infiniteScrollLink.click();
+        return new InfiniteScrollPage();
     }
 }

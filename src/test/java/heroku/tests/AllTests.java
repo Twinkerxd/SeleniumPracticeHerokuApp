@@ -20,6 +20,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private FloatingMenuPage floatingMenuPage;
     private HorizontalSliderPage horizontalSliderPage;
     private HoversPage hoversPage;
+    private InfiniteScrollPage infiniteScrollPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -161,5 +162,17 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         hoversPage.mouseOver();
         hoversPage.viewProfileClick();
         Assertions.assertEquals("Not Found", hoversPage.getTitle());
+    }
+
+    @Test
+    @DisplayName("Infinite Scroll")
+    public void infiniteScroll() throws InterruptedException {
+        infiniteScrollPage = new MainPage().getInfiniteScrollPage();
+
+        Thread.sleep(500); // no-one will see that (need to complete rendering page)
+
+        Assertions.assertEquals(2, infiniteScrollPage.getCountOfParagraphs());
+        infiniteScrollPage.scrollToLastParagraph();
+        Assertions.assertEquals(3, infiniteScrollPage.getCountOfParagraphs());
     }
 }
