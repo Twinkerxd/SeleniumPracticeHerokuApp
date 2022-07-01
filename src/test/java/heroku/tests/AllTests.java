@@ -24,16 +24,24 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
 
     @Test
     @DisplayName("Successful login")
-    public void successfulLoginCheck() {
-        loginPage = new MainPage().getLoginPage().login(LOGIN,PASSWORD);
+    public void successfulLogin() {
+        loginPage = new MainPage().getLoginPage().login(LOGIN, PASSWORD);
         Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
     }
 
     @Test
     @DisplayName("Successful logout")
-    public void successfulLogoutCheck() {
-        loginPage = new MainPage().getLoginPage().login(LOGIN,PASSWORD).logout();
+    public void successfulLogout() {
+        loginPage = new MainPage().getLoginPage().login(LOGIN, PASSWORD).logout();
         Assertions.assertTrue(loginPage.getFlashMessage().contains("You logged out of the secure area!"));
+    }
+
+    @Test
+    public void notSuccessfulLogin() {
+        loginPage = new MainPage().getLoginPage();
+
+        loginPage.login("InvalidUsername", "InvalidPassword");
+        Assertions.assertTrue(loginPage.getFlashMessage().contains("Your username is invalid!"));
     }
 
     @Test
@@ -83,7 +91,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
 
     @Test
     @DisplayName("File upload")
-    public void checkFileUpload() {
+    public void FileUpload() {
         fileUploadPage = new MainPage().getFileUploadPage();
         fileUploadPage.uploadFile("src/horus logo.jpg");
         Assertions.assertEquals("File Uploaded!", fileUploadPage.getTitle());
