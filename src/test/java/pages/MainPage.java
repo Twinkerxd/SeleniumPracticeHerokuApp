@@ -46,6 +46,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/jqueryui/menu']")
     private WebElement jQueryUiMenuLink;
 
+    @FindBy(xpath = "//a[@href='/javascript_alerts']")
+    private WebElement alertsLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -113,5 +116,10 @@ public class MainPage extends BaseSeleniumPage {
     public QueryMenuPage getQueryMenuPage() {
         jQueryUiMenuLink.click();
         return new QueryMenuPage();
+    }
+
+    public AlertsPage getAlertsPage() {
+        alertsLink.click();
+        return new AlertsPage();
     }
 }

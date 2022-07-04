@@ -22,6 +22,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private HoversPage hoversPage;
     private InfiniteScrollPage infiniteScrollPage;
     private QueryMenuPage queryMenuPage;
+    private AlertsPage alertsPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -41,6 +42,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     }
 
     @Test
+    @DisplayName("Not successful login")
     public void notSuccessfulLogin() {
         loginPage = new MainPage().getLoginPage();
 
@@ -157,6 +159,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     }
 
     @Test
+    @DisplayName("Hover")
     public void hoverAndClick() {
         hoversPage = new MainPage().getHoversPage();
 
@@ -179,10 +182,42 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
 
     @Test
     @DisplayName("Query Menu Page")
-    public void queryMenuPage() {
+    public void queryMenu() {
         queryMenuPage = new MainPage().getQueryMenuPage();
-        BaseSeleniumTests.mouseOverElement(queryMenuPage.getEnabledElement());
-        BaseSeleniumTests.mouseOverElement(queryMenuPage.getDownloadsElement());
+        mouseOverElement(queryMenuPage.getEnabledElement());
+        mouseOverElement(queryMenuPage.getDownloadsElement());
         queryMenuPage.pdfButtonClick();
+    }
+
+    @Test
+    @DisplayName("Simple alert")
+    public void alertCheck() {
+        alertsPage = new MainPage().getAlertsPage();
+        alertsPage.clickButton("Click for JS Alert");
+        waitForAlertReady().accept();
+        Assertions.assertEquals("You successfully clicked an alert", alertsPage.getResult());
+    }
+
+    @Test
+    @DisplayName("Confirm box")
+    public void confirmCheck() {
+        alertsPage = new MainPage().getAlertsPage();
+        alertsPage.clickButton("Click for JS Confirm");
+        waitForAlertReady().accept();
+        Assertions.assertEquals("You clicked: Ok", alertsPage.getResult());
+
+        alertsPage.clickButton("Click for JS Confirm");
+        waitForAlertReady().dismiss();
+        Assertions.assertEquals("You clicked: Cancel", alertsPage.getResult());
+    }
+
+    @Test
+    @DisplayName("Prompt alert")
+    public void promptCheck() {
+        alertsPage = new MainPage().getAlertsPage();
+        alertsPage.clickButton("Click for JS Prompt");
+        waitForAlertReady().sendKeys("Horus1613");
+        waitForAlertReady().accept();
+        Assertions.assertEquals("You entered: Horus1613", alertsPage.getResult());
     }
 }

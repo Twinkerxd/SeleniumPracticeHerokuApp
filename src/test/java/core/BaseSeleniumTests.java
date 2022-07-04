@@ -5,10 +5,7 @@ import io.qameta.allure.Allure;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.TestWatcher;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,6 +15,8 @@ import java.time.Duration;
 
 public class BaseSeleniumTests implements TestWatcher {
     protected static WebDriver driver;
+    protected static WebDriverWait wait;
+    protected static Alert alert;
 
     @BeforeEach
     public void setUp() {
@@ -50,9 +49,15 @@ public class BaseSeleniumTests implements TestWatcher {
     }
 
     public static boolean isElementReady(WebElement webElement) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
         return true;
+    }
+
+    public static Alert waitForAlertReady() {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        alert = wait.until(ExpectedConditions.alertIsPresent());
+        return alert;
     }
 
     public static void mouseOverElement(WebElement webElement) {
