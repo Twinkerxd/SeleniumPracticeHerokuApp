@@ -22,12 +22,12 @@ public class MultipleWindowsPage extends BaseSeleniumPage {
         return clickHereButton;
     }
 
-    public ArrayList<String> getAllWindowsTitles() {
+    public ArrayList<String> getAllTabs() {
         return new ArrayList<>(driver.getWindowHandles());
     }
 
     public void switchToTab(int number) {
-        driver.switchTo().window(getAllWindowsTitles().get(number - 1));
+        driver.switchTo().window(getAllTabs().get(number - 1));
     }
 
     public String getHeader() {
