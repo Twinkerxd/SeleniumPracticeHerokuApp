@@ -43,6 +43,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/infinite_scroll']")
     private WebElement infiniteScrollLink;
 
+    @FindBy(xpath = "//a[@href='/jqueryui/menu']")
+    private WebElement jQueryUiMenuLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -105,5 +108,10 @@ public class MainPage extends BaseSeleniumPage {
     public InfiniteScrollPage getInfiniteScrollPage() {
         infiniteScrollLink.click();
         return new InfiniteScrollPage();
+    }
+
+    public QueryMenuPage getQueryMenuPage() {
+        jQueryUiMenuLink.click();
+        return new QueryMenuPage();
     }
 }

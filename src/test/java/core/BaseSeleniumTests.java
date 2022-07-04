@@ -10,6 +10,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -43,6 +46,19 @@ public class BaseSeleniumTests implements TestWatcher {
             return true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
             return false;
+        }
+    }
+
+    public static boolean isElementReady(WebElement webElement) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        return true;
+    }
+
+    public static void mouseOverElement(WebElement webElement) {
+        Actions actions = new Actions(driver);
+        if (isElementReady(webElement)) {
+            actions.moveToElement(webElement).perform();
         }
     }
 }

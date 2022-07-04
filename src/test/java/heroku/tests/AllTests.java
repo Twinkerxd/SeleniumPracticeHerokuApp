@@ -21,6 +21,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private HorizontalSliderPage horizontalSliderPage;
     private HoversPage hoversPage;
     private InfiniteScrollPage infiniteScrollPage;
+    private QueryMenuPage queryMenuPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -174,5 +175,14 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         Assertions.assertEquals(2, infiniteScrollPage.getCountOfParagraphs());
         infiniteScrollPage.scrollToLastParagraph();
         Assertions.assertEquals(3, infiniteScrollPage.getCountOfParagraphs());
+    }
+
+    @Test
+    @DisplayName("Query Menu Page")
+    public void queryMenuPage() {
+        queryMenuPage = new MainPage().getQueryMenuPage();
+        BaseSeleniumTests.mouseOverElement(queryMenuPage.getEnabledElement());
+        BaseSeleniumTests.mouseOverElement(queryMenuPage.getDownloadsElement());
+        queryMenuPage.pdfButtonClick();
     }
 }
