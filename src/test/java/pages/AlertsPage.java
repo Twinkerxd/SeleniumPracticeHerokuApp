@@ -22,12 +22,16 @@ public class AlertsPage extends BaseSeleniumTests {
         PageFactory.initElements(driver, this);
     }
 
-    public void clickButton(String name) {
-        switch (name) {
-            case "Click for JS Alert" -> alertButton.click();
-            case "Click for JS Confirm" -> confirmButton.click();
-            case "Click for JS Prompt" -> promptButton.click();
-        }
+    public WebElement getAlertButton() {
+        return alertButton;
+    }
+
+    public WebElement getConfirmButton() {
+        return confirmButton;
+    }
+
+    public WebElement getPromptButton() {
+        return promptButton;
     }
 
     public String getResult() {

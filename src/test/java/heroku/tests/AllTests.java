@@ -23,6 +23,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private InfiniteScrollPage infiniteScrollPage;
     private QueryMenuPage queryMenuPage;
     private AlertsPage alertsPage;
+    private MultipleWindowsPage multipleWindowsPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -193,7 +194,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Simple alert")
     public void alertCheck() {
         alertsPage = new MainPage().getAlertsPage();
-        alertsPage.clickButton("Click for JS Alert");
+        alertsPage.getAlertButton().click();
         waitForAlertReady().accept();
         Assertions.assertEquals("You successfully clicked an alert", alertsPage.getResult());
     }
@@ -202,11 +203,11 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Confirm box")
     public void confirmCheck() {
         alertsPage = new MainPage().getAlertsPage();
-        alertsPage.clickButton("Click for JS Confirm");
+        alertsPage.getConfirmButton().click();
         waitForAlertReady().accept();
         Assertions.assertEquals("You clicked: Ok", alertsPage.getResult());
 
-        alertsPage.clickButton("Click for JS Confirm");
+        alertsPage.getConfirmButton().click();
         waitForAlertReady().dismiss();
         Assertions.assertEquals("You clicked: Cancel", alertsPage.getResult());
     }
@@ -215,9 +216,22 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Prompt alert")
     public void promptCheck() {
         alertsPage = new MainPage().getAlertsPage();
-        alertsPage.clickButton("Click for JS Prompt");
+        alertsPage.getPromptButton().click();
         waitForAlertReady().sendKeys("Horus1613");
         waitForAlertReady().accept();
         Assertions.assertEquals("You entered: Horus1613", alertsPage.getResult());
+    }
+
+    @Test
+    @DisplayName("Open new tab")
+    public void newTab() {
+        multipleWindowsPage = new MainPage().getMultipleWindowsPage();
+        multipleWindowsPage.getClickHereButton().click();
+        Assertions.assertEquals(2, multipleWindowsPage.getAllWindowsTitles().size());
+        multipleWindowsPage.switchToTab(2);
+        Assertions.assertEquals("New Window", multipleWindowsPage.getHeader());
+        multipleWindowsPage.closeTab();
+        multipleWindowsPage.switchToTab(1);
+        Assertions.assertEquals(1, multipleWindowsPage.getAllWindowsTitles().size());
     }
 }

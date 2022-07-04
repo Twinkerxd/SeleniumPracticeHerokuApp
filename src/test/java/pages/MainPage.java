@@ -49,6 +49,9 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/javascript_alerts']")
     private WebElement alertsLink;
 
+    @FindBy(xpath = "//a[@href='/windows']")
+    private WebElement multipleWindowsLink;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -121,5 +124,10 @@ public class MainPage extends BaseSeleniumPage {
     public AlertsPage getAlertsPage() {
         alertsLink.click();
         return new AlertsPage();
+    }
+
+    public MultipleWindowsPage getMultipleWindowsPage() {
+        multipleWindowsLink.click();
+        return new MultipleWindowsPage();
     }
 }
