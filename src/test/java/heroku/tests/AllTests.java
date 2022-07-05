@@ -24,6 +24,7 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private QueryMenuPage queryMenuPage;
     private AlertsPage alertsPage;
     private MultipleWindowsPage multipleWindowsPage;
+    private iFramePage iFramePage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -233,5 +234,14 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         multipleWindowsPage.closeTab();
         multipleWindowsPage.switchToTab(1);
         Assertions.assertEquals(1, multipleWindowsPage.getAllTabs().size());
+    }
+
+    @Test
+    @DisplayName("iFrame")
+    public void iFrame() {
+        iFramePage = new MainPage().getiFramePage();
+        iFramePage.iFrameClick();
+        iFramePage.sendMessage(")))");
+        Assertions.assertEquals("Your content goes here.)))", iFramePage.getText());
     }
 }

@@ -52,6 +52,10 @@ public class MainPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/windows']")
     private WebElement multipleWindowsLink;
 
+    @FindBy(xpath = "//a[@href='/frames']")
+    private WebElement iframeLink;
+
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -129,5 +133,10 @@ public class MainPage extends BaseSeleniumPage {
     public MultipleWindowsPage getMultipleWindowsPage() {
         multipleWindowsLink.click();
         return new MultipleWindowsPage();
+    }
+
+    public iFramePage getiFramePage() {
+        iframeLink.click();
+        return new iFramePage();
     }
 }
