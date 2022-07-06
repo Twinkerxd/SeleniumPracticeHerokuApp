@@ -1,7 +1,6 @@
 package pages;
 
 import core.BaseSeleniumPage;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,8 +22,12 @@ public class InfiniteScrollPage extends BaseSeleniumPage {
         return paragraphs.size();
     }
 
+//    public void scrollToLastParagraph() {
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].scrollIntoView(true);", lastParagraph);
+//    }
+
     public void scrollToLastParagraph() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", lastParagraph);
+        scrollToElement(lastParagraph);
     }
 }

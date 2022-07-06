@@ -1,7 +1,6 @@
 package pages;
 
 import core.BaseSeleniumPage;
-import core.BaseSeleniumTests;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,6 +33,6 @@ public class BrokenImagesPage extends BaseSeleniumPage {
 
     public boolean isImageHere(String src) {
         driver.get(src);
-        return BaseSeleniumTests.isDisplayed(image);
+        return isDisplayed(image);
     }
 }

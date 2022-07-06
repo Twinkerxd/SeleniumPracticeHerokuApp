@@ -39,7 +39,7 @@ public class BaseSeleniumTests implements TestWatcher {
     }
 
 
-    public static boolean isDisplayed(WebElement webElement) {
+    public boolean isDisplayed(WebElement webElement) {
         try {
             webElement.isDisplayed();
             return true;
@@ -48,22 +48,27 @@ public class BaseSeleniumTests implements TestWatcher {
         }
     }
 
-    public static boolean isElementReady(WebElement webElement) {
+    public boolean isElementReady(WebElement webElement) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
         return true;
     }
 
-    public static Alert waitForAlertReady() {
+    public Alert waitForAlertReady() {
         wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         alert = wait.until(ExpectedConditions.alertIsPresent());
         return alert;
     }
 
-    public static void mouseOverElement(WebElement webElement) {
+    public void mouseOverElement(WebElement webElement) {
         Actions actions = new Actions(driver);
         if (isElementReady(webElement)) {
             actions.moveToElement(webElement).perform();
         }
+    }
+
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
