@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class BaseSeleniumTests implements TestWatcher {
     protected static WebDriver driver;
@@ -77,5 +78,13 @@ public class BaseSeleniumTests implements TestWatcher {
     public void saveScreenshot(String name) {
         Allure.getLifecycle().addAttachment(name, "image/png", "png",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+    }
+
+    public void switchToNewWindow() {
+        driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(1));
+    }
+
+    public void switchToDefaultWindow() {
+        driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(0));
     }
 }

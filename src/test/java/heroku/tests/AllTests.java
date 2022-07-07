@@ -231,10 +231,10 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         multipleWindowsPage = new MainPage().getMultipleWindowsPage();
         multipleWindowsPage.getClickHereButton().click();
         Assertions.assertEquals(2, multipleWindowsPage.getAllTabs().size());
-        multipleWindowsPage.switchToTab(2);
+        multipleWindowsPage.switchToNewWindow();
         Assertions.assertEquals("New Window", multipleWindowsPage.getHeader());
         multipleWindowsPage.closeTab();
-        multipleWindowsPage.switchToTab(1);
+        multipleWindowsPage.switchToDefaultWindow();
         Assertions.assertEquals(1, multipleWindowsPage.getAllTabs().size());
     }
 

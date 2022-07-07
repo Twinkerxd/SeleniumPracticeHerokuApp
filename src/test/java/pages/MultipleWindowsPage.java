@@ -26,10 +26,6 @@ public class MultipleWindowsPage extends BaseSeleniumPage {
         return new ArrayList<>(driver.getWindowHandles());
     }
 
-    public void switchToTab(int number) {
-        driver.switchTo().window(getAllTabs().get(number - 1));
-    }
-
     public String getHeader() {
         return header.getText();
     }
