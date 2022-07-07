@@ -21,6 +21,7 @@ public class iFramePage extends BaseSeleniumPage {
 
     public void sendMessage(String text) {
         driver.switchTo().frame(iframe);
+        messageBox.clear();
         messageBox.sendKeys(text);
     }
 

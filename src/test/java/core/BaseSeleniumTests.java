@@ -38,7 +38,6 @@ public class BaseSeleniumTests implements TestWatcher {
         driver.quit(); // browser
     }
 
-
     public boolean isDisplayed(WebElement webElement) {
         try {
             webElement.isDisplayed();
@@ -61,9 +60,8 @@ public class BaseSeleniumTests implements TestWatcher {
     }
 
     public void mouseOverElement(WebElement webElement) {
-        Actions actions = new Actions(driver);
         if (isElementReady(webElement)) {
-            actions.moveToElement(webElement).perform();
+            new Actions(driver).moveToElement(webElement).perform();
         }
     }
 

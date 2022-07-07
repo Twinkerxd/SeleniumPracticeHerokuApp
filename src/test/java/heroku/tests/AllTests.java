@@ -242,6 +242,6 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         iFramePage = new MainPage().getiFramePage();
         iFramePage.iFrameClick();
         iFramePage.sendMessage(")))");
-        Assertions.assertEquals("Your content goes here.)))", iFramePage.getText());
+        Assertions.assertEquals(")))", iFramePage.getText());
     }
 }

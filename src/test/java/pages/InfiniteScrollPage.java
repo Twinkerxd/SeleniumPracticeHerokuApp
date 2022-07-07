@@ -22,11 +22,6 @@ public class InfiniteScrollPage extends BaseSeleniumPage {
         return paragraphs.size();
     }
 
-//    public void scrollToLastParagraph() {
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", lastParagraph);
-//    }
-
     public void scrollToLastParagraph() {
         scrollToElement(lastParagraph);
     }
