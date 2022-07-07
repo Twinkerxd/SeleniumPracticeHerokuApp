@@ -7,9 +7,6 @@
     <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InfiniteScrollPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InfiniteScrollPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/iFramePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/iFramePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests.infiniteScroll">
+  <component name="RunManager" selected="JUnit.AllTests.brokenImages">
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -71,7 +68,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.FileUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.brokenImages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -81,23 +78,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="FileUpload" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AllTests.iFrame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="iFrame" />
+      <option name="METHOD_NAME" value="brokenImages" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,6 +95,22 @@
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
       <option name="METHOD_NAME" value="infiniteScroll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests.promptCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
+      <option name="METHOD_NAME" value="promptCheck" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AllTests.brokenImages" />
+        <item itemvalue="JUnit.AllTests" />
+        <item itemvalue="JUnit.AllTests.promptCheck" />
         <item itemvalue="JUnit.AllTests.infiniteScroll" />
         <item itemvalue="JUnit.AllTests.queryMenu" />
-        <item itemvalue="JUnit.AllTests.iFrame" />
-        <item itemvalue="JUnit.AllTests" />
-        <item itemvalue="JUnit.AllTests.FileUpload" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657106976396</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Refactoring">
+      <created>1657177583087</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1657177583087</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

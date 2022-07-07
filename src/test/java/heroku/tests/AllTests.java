@@ -112,8 +112,10 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         SoftAssertions softAssertions = new SoftAssertions();
 
         for (String src : brokenImagesPage.getAllSrcImg()) {
-            softAssertions.assertThat(brokenImagesPage.isImageHere(src))
+            softAssertions.assertThat(brokenImagesPage
+                            .isImageHere(src))
                     .isTrue();
+            saveScreenshot(src);
         }
         softAssertions.assertAll();
     }

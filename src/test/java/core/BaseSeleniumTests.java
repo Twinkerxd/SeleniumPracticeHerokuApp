@@ -32,9 +32,8 @@ public class BaseSeleniumTests implements TestWatcher {
 
     @AfterEach
     public void tearDown() {
-        Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png",
-                ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
         //driver.close(); // process in system
+        saveScreenshot();
         driver.quit(); // browser
     }
 
@@ -68,5 +67,15 @@ public class BaseSeleniumTests implements TestWatcher {
     public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void saveScreenshot() {
+        Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png",
+                ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+    }
+
+    public void saveScreenshot(String name) {
+        Allure.getLifecycle().addAttachment(name, "image/png", "png",
+                ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
     }
 }
