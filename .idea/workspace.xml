@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Refactoring">
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added screenshot method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BrokenImagesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BrokenImagesPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests.brokenImages">
+  <component name="RunManager" selected="JUnit.AllTests.deletingElements">
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -79,6 +80,22 @@
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
       <option name="METHOD_NAME" value="brokenImages" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests.deletingElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
+      <option name="METHOD_NAME" value="deletingElements" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,29 +133,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.queryMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="queryMenu" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AllTests.deletingElements" />
         <item itemvalue="JUnit.AllTests.brokenImages" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.AllTests.promptCheck" />
         <item itemvalue="JUnit.AllTests.infiniteScroll" />
-        <item itemvalue="JUnit.AllTests.queryMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657177583087</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added screenshot method">
+      <created>1657184348683</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1657184348683</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,7 +370,8 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="Added iframe test" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Added screenshot method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added screenshot method" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

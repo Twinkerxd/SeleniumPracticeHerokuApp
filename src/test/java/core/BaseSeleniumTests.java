@@ -37,7 +37,7 @@ public class BaseSeleniumTests implements TestWatcher {
         driver.quit(); // browser
     }
 
-    public boolean isDisplayed(WebElement webElement) {
+    public boolean isElementDisplayed(WebElement webElement) {
         try {
             webElement.isDisplayed();
             return true;

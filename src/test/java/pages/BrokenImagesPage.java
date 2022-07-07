@@ -33,6 +33,6 @@ public class BrokenImagesPage extends BaseSeleniumPage {
 
     public boolean isImageHere(String src) {
         driver.get(src);
-        return isDisplayed(image);
+        return isElementDisplayed(image);
     }
 }
