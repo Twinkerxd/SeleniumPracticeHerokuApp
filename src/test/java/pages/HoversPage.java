@@ -9,10 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 public class HoversPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@class='figure']")
     private WebElement firstAvatar;
-
     @FindBy(xpath = "//a[@href='/users/1']")
     private WebElement viewProfileLink;
-
     @FindBy(xpath = "//h1")
     private WebElement title;
 

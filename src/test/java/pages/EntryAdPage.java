@@ -8,10 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public class EntryAdPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@class='modal-footer']")
     private WebElement closeButton;
-
     @FindBy(xpath = "//div[@id='modal']")
     private WebElement modalWindow;
-
     @FindBy(xpath = "//a[@id='restart-ad']")
     private WebElement clickHereButton;
 

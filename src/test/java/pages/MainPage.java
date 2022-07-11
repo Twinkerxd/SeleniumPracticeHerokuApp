@@ -9,49 +9,34 @@ public class MainPage extends BaseSeleniumPage {
 
     @FindBy(xpath = "//a[@href='/upload']")
     private WebElement fileUpdateLink;
-
     @FindBy(xpath = "//a[@href='/login']")
     private WebElement formAuthenticationLink;
-
     @FindBy(xpath = "//a[@href='/add_remove_elements/']")
     private WebElement addElementsLink;
-
     @FindBy(xpath = "//a[@href='/checkboxes']")
     private WebElement checkboxesLink;
-
     @FindBy(xpath = "//a[@href='/dropdown']")
     private WebElement dropDownLink;
-
     @FindBy(xpath = "//a[@href='/basic_auth']")
     private WebElement basicAuthLink;
-
     @FindBy(xpath = "//a[@href='/broken_images']")
     private WebElement brokenImagesLink;
-
     @FindBy(xpath = "//a[@href='/entry_ad']")
     private WebElement entryAdLink;
-
     @FindBy(xpath = "//a[@href='/floating_menu']")
     private WebElement floatingMenuLink;
-
     @FindBy(xpath = "//a[@href='/horizontal_slider']")
     private WebElement horizontalSliderLink;
-
     @FindBy(xpath = "//a[@href='/hovers']")
     private WebElement hoversLink;
-
     @FindBy(xpath = "//a[@href='/infinite_scroll']")
     private WebElement infiniteScrollLink;
-
     @FindBy(xpath = "//a[@href='/jqueryui/menu']")
     private WebElement jQueryUiMenuLink;
-
     @FindBy(xpath = "//a[@href='/javascript_alerts']")
     private WebElement alertsLink;
-
     @FindBy(xpath = "//a[@href='/windows']")
     private WebElement multipleWindowsLink;
-
     @FindBy(xpath = "//a[@href='/frames']")
     private WebElement iframeLink;
 

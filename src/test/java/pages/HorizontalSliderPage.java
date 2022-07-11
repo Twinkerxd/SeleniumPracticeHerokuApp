@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 public class HorizontalSliderPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@class='sliderContainer']/input")
     private WebElement slider;
-
     @FindBy(xpath = "//div[@class='sliderContainer']/span[@id='range']")
     private WebElement sliderValue;
 

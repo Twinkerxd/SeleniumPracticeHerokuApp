@@ -10,7 +10,6 @@ import java.util.List;
 public class InfiniteScrollPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@class='jscroll-added']")
     private List<WebElement> paragraphs;
-
     @FindBy(xpath = "//div[@class='jscroll-added'][last()]")
     private WebElement lastParagraph;
 

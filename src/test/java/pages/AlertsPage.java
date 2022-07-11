@@ -8,13 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class AlertsPage extends BaseSeleniumTests {
     @FindBy(xpath = "//button[text()='Click for JS Alert']")
     private WebElement alertButton;
-
     @FindBy(xpath = "//button[text()='Click for JS Confirm']")
     private WebElement confirmButton;
-
     @FindBy(xpath = "//button[text()='Click for JS Prompt']")
     private WebElement promptButton;
-
     @FindBy(id = "result")
     private WebElement result;
 

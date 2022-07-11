@@ -10,7 +10,6 @@ import java.util.List;
 public class AddElementsPage extends BaseSeleniumPage {
     @FindBy(xpath = "//button[@onclick='addElement()']")
     private WebElement addButton;
-
     @FindBy(xpath = "//button[@onclick='deleteElement()']")
     private List<WebElement> deleteButtons;
 

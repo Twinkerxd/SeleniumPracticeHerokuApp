@@ -8,10 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public class iFramePage extends BaseSeleniumPage {
     @FindBy(xpath = "//p")
     private WebElement messageBox;
-
     @FindBy(xpath = "//iframe")
     private WebElement iframe;
-
     @FindBy(xpath = "//a[@href='/iframe']")
     private WebElement iframeLink;
 

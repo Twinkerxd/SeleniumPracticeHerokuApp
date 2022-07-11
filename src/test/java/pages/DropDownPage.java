@@ -10,7 +10,6 @@ import java.util.List;
 public class DropDownPage extends BaseSeleniumPage {
     @FindBy(id = "dropdown")
     private WebElement dropdown;
-
     @FindBy(xpath = "//option")
     private List<WebElement> dropdownElements;
 

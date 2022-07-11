@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class MultipleWindowsPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[@href='/windows/new']")
     private WebElement clickHereButton;
-
     @FindBy(xpath = "//h3")
     private WebElement header;
 
