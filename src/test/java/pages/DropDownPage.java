@@ -8,10 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class DropDownPage extends BaseSeleniumPage {
-    @FindBy(id = "dropdown")
-    private WebElement dropdown;
-    @FindBy(xpath = "//option")
-    private List<WebElement> dropdownElements;
+    @FindBy(id = "dropdown") private WebElement dropdown;
+    @FindBy(xpath = "//option") private List<WebElement> dropdownElements;
 
     public DropDownPage() {
         PageFactory.initElements(driver, this);

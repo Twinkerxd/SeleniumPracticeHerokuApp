@@ -9,12 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BrokenImagesPage extends BaseSeleniumPage {
-    @FindBy(xpath = "//div[@class='example']//img")
-    private List<WebElement> images;
-    @FindBy(xpath = "//img")
-    private WebElement image;
-    @FindBy(xpath = "//h1")
-    private WebElement header;
+    @FindBy(xpath = "//div[@class='example']//img") private List<WebElement> images;
+    @FindBy(xpath = "//img") private WebElement image;
+    @FindBy(xpath = "//h1") private WebElement header;
 
     public BrokenImagesPage() {
         PageFactory.initElements(driver, this);
