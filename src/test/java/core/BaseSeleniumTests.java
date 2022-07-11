@@ -2,6 +2,7 @@ package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.TestWatcher;
@@ -18,13 +19,20 @@ public class BaseSeleniumTests implements TestWatcher {
     protected static WebDriver driver;
     protected static WebDriverWait wait;
     protected static Alert alert;
+    protected static String device = "desktop";
 
     @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://the-internet.herokuapp.com/");
+
+        if (device.equals("desktop")) {
+            driver.manage().window().maximize();
+            driver.get("https://the-internet.herokuapp.com/");
+        } else if (device.equals("mobile")) {
+            driver.manage().window().setSize(new Dimension(360, 740));
+            driver.get("https://www.selenium.dev/");
+        }
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10)); // how long we will wait the page
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); // how long we will wait the element
@@ -34,7 +42,7 @@ public class BaseSeleniumTests implements TestWatcher {
     @AfterEach
     public void tearDown() {
         //driver.close(); // process in system
-        saveScreenshot();
+        saveScreenshot(device);
         driver.quit(); // browser
     }
 
@@ -70,6 +78,7 @@ public class BaseSeleniumTests implements TestWatcher {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    @Step
     public void saveScreenshot() {
         Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));

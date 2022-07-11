@@ -1,6 +1,8 @@
 package heroku.tests;
 
 import core.BaseSeleniumTests;
+import io.qameta.allure.Link;
+import jdk.jfr.Description;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -28,6 +30,17 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
+
+    @Test
+    @Description("Some important text right here")
+    @Link(name = "Just google for it", type = "https://www.google.com/")
+    public void debug() {
+        if (device.equals("desktop")) {
+            //do some stuff
+        } else if (device.equals("mobile")) {
+            //do some stuff
+        }
+    }
 
     @Test
     @DisplayName("Successful login")
