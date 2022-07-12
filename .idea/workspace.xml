@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Removed spaces">
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Removed spaces 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -360,7 +362,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657521870252</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Removed spaces 2">
+      <created>1657521983169</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1657521983169</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Removed spaces 3">
+      <created>1657522142619</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1657522142619</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,8 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Allure report" />
-    <MESSAGE value="Added BaseSeleniumPage, code refactor" />
     <MESSAGE value="Test" />
     <MESSAGE value="Add/delete elements refactor" />
     <MESSAGE value="spacespace" />
@@ -400,8 +414,9 @@
     <MESSAGE value="Added switching windows methods" />
     <MESSAGE value="Added mobile window size" />
     <MESSAGE value="Removed spaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed spaces" />
+    <MESSAGE value="Removed spaces 2" />
+    <MESSAGE value="Removed spaces 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed spaces 3" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
