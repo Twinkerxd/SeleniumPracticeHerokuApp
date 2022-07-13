@@ -39,10 +39,12 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
 
-    @Test
+    @Test()
     @Description("Some important text right here")
-    @Link(name = "Just google for it", type = "https://www.google.com/")
-    public void debug() {
+    @Link("https://example.org")
+    @Link(name = "allure", type = "mylink")
+    @DisplayName("Allure Annotations")
+    public void allureAnnotations() {
         if (device.equals("desktop")) {
             //do some stuff
         } else if (device.equals("mobile")) {
@@ -279,10 +281,13 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
 
     @ParameterizedTest(name = "iframe: {0}")
     @ValueSource(strings = { "qwe", "rty" })
+    @DisplayName("iFrame2")
     public void iFrame2(String text) {
         iFramePage = new MainPage().getiFramePage();
         iFramePage.iFrameClick();
         iFramePage.sendMessage(text);
         assertEquals(text, iFramePage.getText());
     }
+
+
 }

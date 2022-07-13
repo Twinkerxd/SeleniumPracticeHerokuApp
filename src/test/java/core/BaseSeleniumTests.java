@@ -3,7 +3,9 @@ package core;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.*;
@@ -21,11 +23,17 @@ public class BaseSeleniumTests implements TestWatcher {
     protected static Alert alert;
     protected static String device = "desktop";
 
-    @BeforeEach
-    public void setUp() {
+    @BeforeAll
+    public static void init() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10)); // how long we will wait the page
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); // how long we will wait the element
+        BaseSeleniumPage.setDriver(driver);
+    }
 
+    @BeforeEach
+    public void setUp() {
         if (device.equals("desktop")) {
             driver.manage().window().maximize();
             driver.get("https://the-internet.herokuapp.com/");
@@ -33,17 +41,17 @@ public class BaseSeleniumTests implements TestWatcher {
             driver.manage().window().setSize(new Dimension(360, 740));
             driver.get("https://www.selenium.dev/");
         }
-
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10)); // how long we will wait the page
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); // how long we will wait the element
-        BaseSeleniumPage.setDriver(driver);
     }
 
     @AfterEach
     public void tearDown() {
-        //driver.close(); // process in system
         saveScreenshot(device);
-        driver.quit(); // browser
+    }
+
+    @AfterAll
+    public static void end() {
+        //driver.close(); // process in system
+        driver.quit();
     }
 
     public boolean isElementDisplayed(WebElement webElement) {
