@@ -7,11 +7,18 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.TestWatcher;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.JavascriptExecutor;
 import pages.*;
 
+import java.util.stream.Stream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("All tests")
 public class AllTests extends BaseSeleniumTests implements TestWatcher {
     private FileUploadPage fileUploadPage;
     private LoginPage loginPage;
@@ -252,12 +259,30 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         assertEquals(1, multipleWindowsPage.getAllTabs().size());
     }
 
-    @Test
+    @ParameterizedTest(name = "iFrame => entering text={0}{1}")
+    @MethodSource("dataProvider")
     @DisplayName("iFrame")
-    public void iFrame() {
+    public void iFrame(String text, int number) {
         iFramePage = new MainPage().getiFramePage();
         iFramePage.iFrameClick();
-        iFramePage.sendMessage(")))");
-        assertEquals(")))", iFramePage.getText());
+        iFramePage.sendMessage(text + number);
+        assertEquals(text + number, iFramePage.getText());
+    }
+
+    private static Stream<Arguments> dataProvider() {
+        return Stream.of(
+                Arguments.of("Kappa", 1),
+                Arguments.of("4Head", 2),
+                Arguments.of("WutFace", 3)
+        );
+    }
+
+    @ParameterizedTest(name = "iframe: {0}")
+    @ValueSource(strings = { "qwe", "rty" })
+    public void iFrame2(String text) {
+        iFramePage = new MainPage().getiFramePage();
+        iFramePage.iFrameClick();
+        iFramePage.sendMessage(text);
+        assertEquals(text, iFramePage.getText());
     }
 }
