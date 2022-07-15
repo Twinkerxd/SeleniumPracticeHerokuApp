@@ -15,13 +15,15 @@ public class HoversPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void mouseOver() {
+    public HoversPage mouseOverFirstAvatar() {
         Actions action = new Actions(driver);
         action.moveToElement(firstAvatar).perform();
+        return this;
     }
 
-    public void viewProfileClick() {
+    public HoversPage viewProfileClick() {
         viewProfileLink.click();
+        return this;
     }
 
     public String getTitle() {

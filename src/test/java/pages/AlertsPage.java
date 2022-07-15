@@ -15,16 +15,19 @@ public class AlertsPage extends BaseSeleniumTests {
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement getAlertButton() {
-        return alertButton;
+    public AlertsPage clickAlertButton() {
+        alertButton.click();
+        return this;
     }
 
-    public WebElement getConfirmButton() {
-        return confirmButton;
+    public AlertsPage clickConfirmButton() {
+        confirmButton.click();
+        return this;
     }
 
-    public WebElement getPromptButton() {
-        return promptButton;
+    public AlertsPage clickPromptButton() {
+        promptButton.click();
+        return this;
     }
 
     public String getResult() {

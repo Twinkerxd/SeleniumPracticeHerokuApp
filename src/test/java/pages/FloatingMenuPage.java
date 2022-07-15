@@ -12,7 +12,7 @@ public class FloatingMenuPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public String getCords() {
+    public String getMenuCoordinates() {
         return menu.getAttribute("style");
     }
 }

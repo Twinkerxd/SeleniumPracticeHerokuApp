@@ -55,23 +55,31 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @Test
     @DisplayName("Successful login")
     public void successfulLogin() {
-        loginPage = new MainPage().getLoginPage().login(LOGIN, PASSWORD);
+        loginPage = new MainPage()
+                .getLoginPage()
+                .login(LOGIN, PASSWORD);
+
         assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
     }
 
     @Test
     @DisplayName("Successful logout")
     public void successfulLogout() {
-        loginPage = new MainPage().getLoginPage().login(LOGIN, PASSWORD).logout();
+        loginPage = new MainPage()
+                .getLoginPage()
+                .login(LOGIN, PASSWORD)
+                .logout();
+
         assertTrue(loginPage.getFlashMessage().contains("You logged out of the secure area!"));
     }
 
     @Test
     @DisplayName("Not successful login")
     public void notSuccessfulLogin() {
-        loginPage = new MainPage().getLoginPage();
+        loginPage = new MainPage()
+                .getLoginPage()
+                .login("InvalidUsername", "InvalidPassword");
 
-        loginPage.login("InvalidUsername", "InvalidPassword");
         assertTrue(loginPage.getFlashMessage().contains("Your username is invalid!"));
     }
 
@@ -79,8 +87,11 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Adding elements")
     public void addingElements() {
         addElementsPage = new MainPage().getAddElementsPage();
+
         assertEquals(0, addElementsPage.deleteButtonsList().size());
+
         addElementsPage.addElement();
+
         assertEquals(1, addElementsPage.deleteButtonsList().size());
     }
 
@@ -88,11 +99,15 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Deleting elements")
     public void deletingElements() {
         addElementsPage = new MainPage().getAddElementsPage();
+
         assertEquals(0, addElementsPage.deleteButtonsList().size());
-        addElementsPage.addElement();
-        addElementsPage.addElement();
-        addElementsPage.addElement();
-        addElementsPage.deleteElement();
+
+        addElementsPage
+                .addElement()
+                .addElement()
+                .addElement()
+                .deleteElement();
+
         assertEquals(2, addElementsPage.deleteButtonsList().size());
     }
 
@@ -115,16 +130,20 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @Test
     @DisplayName("Dropdown")
     public void selectElementDropdown() {
-        dropDownPage = new MainPage().getDropDownPage();
-        dropDownPage.setDropdownValue(1);
+        dropDownPage = new MainPage()
+                .getDropDownPage()
+                .setDropdownValue(1);
+
         assertTrue(dropDownPage.isOptionSelected(1));
     }
 
     @Test
     @DisplayName("File upload")
     public void FileUpload() {
-        fileUploadPage = new MainPage().getFileUploadPage();
-        fileUploadPage.uploadFile("src/horus logo.jpg");
+        fileUploadPage = new MainPage()
+                .getFileUploadPage()
+                .uploadFile("src/horus logo.jpg");
+
         assertEquals("File Uploaded!", fileUploadPage.getTitle());
     }
 
@@ -155,8 +174,8 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         } while (!entryAdPage.isModalWindowUp());
 
         entryAdPage.closeButtonClick();
-        assertFalse(entryAdPage.isModalWindowUp());
 
+        assertFalse(entryAdPage.isModalWindowUp());
     }
 
     @Test
@@ -166,17 +185,21 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 4275)");
-        assertEquals("top: 4237px;", floatingMenuPage.getCords());
+
+        assertEquals("top: 4237px;", floatingMenuPage.getMenuCoordinates());
     }
 
     @Test
     @DisplayName("Horizontal Slider")
     public void horizontalSlider() {
-        horizontalSliderPage = new MainPage().getHorizontalSliderPage();
+        horizontalSliderPage = new MainPage()
+                .getHorizontalSliderPage()
+                .setSliderValue("right", 5);
 
-        horizontalSliderPage.setSliderValue("right", 5);
         assertEquals(5, horizontalSliderPage.getSliderValue());
+
         horizontalSliderPage.setSliderValue("left", 0);
+
         assertEquals(0, horizontalSliderPage.getSliderValue());
 
 //        Another way to slide with mouse click
@@ -188,10 +211,11 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @Test
     @DisplayName("Hover")
     public void hoverAndClick() {
-        hoversPage = new MainPage().getHoversPage();
+        hoversPage = new MainPage()
+                .getHoversPage()
+                .mouseOverFirstAvatar()
+                .viewProfileClick();
 
-        hoversPage.mouseOver();
-        hoversPage.viewProfileClick();
         assertEquals("Not Found", hoversPage.getTitle());
     }
 
@@ -203,7 +227,9 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
         Thread.sleep(500); // no-one will see that (need to complete rendering page)
 
         assertEquals(2, infiniteScrollPage.getCountOfParagraphs());
+
         infiniteScrollPage.scrollToLastParagraph();
+
         assertEquals(3, infiniteScrollPage.getCountOfParagraphs());
     }
 
@@ -220,44 +246,59 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @DisplayName("Simple alert")
     public void alertCheck() {
         alertsPage = new MainPage().getAlertsPage();
-        alertsPage.getAlertButton().click();
+        alertsPage.clickAlertButton();
         waitForAlertReady().accept();
+
         assertEquals("You successfully clicked an alert", alertsPage.getResult());
     }
 
     @Test
     @DisplayName("Confirm box")
     public void confirmCheck() {
-        alertsPage = new MainPage().getAlertsPage();
-        alertsPage.getConfirmButton().click();
+        alertsPage = new MainPage()
+                .getAlertsPage()
+                .clickConfirmButton();
+
         waitForAlertReady().accept();
+
         assertEquals("You clicked: Ok", alertsPage.getResult());
 
-        alertsPage.getConfirmButton().click();
+        alertsPage.clickConfirmButton();
         waitForAlertReady().dismiss();
+
         assertEquals("You clicked: Cancel", alertsPage.getResult());
     }
 
     @Test
     @DisplayName("Prompt alert")
     public void promptCheck() {
-        alertsPage = new MainPage().getAlertsPage();
-        alertsPage.getPromptButton().click();
+        alertsPage = new MainPage()
+                .getAlertsPage()
+                .clickPromptButton();
+
         waitForAlertReady().sendKeys("Horus1613");
         waitForAlertReady().accept();
+
         assertEquals("You entered: Horus1613", alertsPage.getResult());
     }
 
     @Test
     @DisplayName("Open new tab")
     public void newTab() {
-        multipleWindowsPage = new MainPage().getMultipleWindowsPage();
-        multipleWindowsPage.getClickHereButton().click();
+        multipleWindowsPage = new MainPage()
+                .getMultipleWindowsPage()
+                .clickClickHereButton();
+
         assertEquals(2, multipleWindowsPage.getAllTabs().size());
+
         multipleWindowsPage.switchToNewWindow();
+
         assertEquals("New Window", multipleWindowsPage.getHeader());
-        multipleWindowsPage.closeTab();
-        multipleWindowsPage.switchToDefaultWindow();
+
+        multipleWindowsPage
+                .closeTab()
+                .switchToDefaultWindow();
+
         assertEquals(1, multipleWindowsPage.getAllTabs().size());
     }
 
@@ -265,9 +306,11 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @MethodSource("dataProvider")
     @DisplayName("iFrame")
     public void iFrame(String text, int number) {
-        iFramePage = new MainPage().getiFramePage();
-        iFramePage.iFrameClick();
-        iFramePage.sendMessage(text + number);
+        iFramePage = new MainPage()
+                .getiFramePage()
+                .iFrameClick()
+                .sendMessage(text + number);
+
         assertEquals(text + number, iFramePage.getText());
     }
 
@@ -283,11 +326,11 @@ public class AllTests extends BaseSeleniumTests implements TestWatcher {
     @ValueSource(strings = { "qwe", "rty" })
     @DisplayName("iFrame2")
     public void iFrame2(String text) {
-        iFramePage = new MainPage().getiFramePage();
-        iFramePage.iFrameClick();
-        iFramePage.sendMessage(text);
+        iFramePage = new MainPage()
+                .getiFramePage()
+                .iFrameClick()
+                .sendMessage(text);
+
         assertEquals(text, iFramePage.getText());
     }
-
-
 }

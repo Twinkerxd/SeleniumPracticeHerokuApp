@@ -19,8 +19,9 @@ public class DropDownPage extends BaseSeleniumPage {
         return dropdownElements.get(optionNumber).isSelected();
     }
 
-    public void setDropdownValue(int optionNumber) {
+    public DropDownPage setDropdownValue(int optionNumber) {
         dropdown.click();
         dropdownElements.get(optionNumber).click();
+        return this;
     }
 }

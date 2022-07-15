@@ -50,8 +50,8 @@ public class BaseSeleniumTests implements TestWatcher {
 
     @AfterAll
     public static void end() {
-        //driver.close(); // process in system
-        driver.quit();
+        //driver.close(); // tab in browser
+        driver.quit(); // process in system
     }
 
     public boolean isElementDisplayed(WebElement webElement) {

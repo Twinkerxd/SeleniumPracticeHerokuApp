@@ -14,17 +14,19 @@ public class iFramePage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void sendMessage(String text) {
+    public iFramePage sendMessage(String text) {
         driver.switchTo().frame(iframe);
         messageBox.clear();
         messageBox.sendKeys(text);
+        return this;
     }
 
     public String getText() {
         return messageBox.getText();
     }
 
-    public void iFrameClick() {
+    public iFramePage iFrameClick() {
         iframeLink.click();
+        return this;
     }
 }

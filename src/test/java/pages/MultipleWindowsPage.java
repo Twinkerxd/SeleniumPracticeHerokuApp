@@ -15,8 +15,9 @@ public class MultipleWindowsPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement getClickHereButton() {
-        return clickHereButton;
+    public MultipleWindowsPage clickClickHereButton() {
+        clickHereButton.click();
+        return this;
     }
 
     public ArrayList<String> getAllTabs() {
@@ -27,7 +28,8 @@ public class MultipleWindowsPage extends BaseSeleniumPage {
         return header.getText();
     }
 
-    public void closeTab() {
+    public MultipleWindowsPage closeTab() {
         driver.close();
+        return this;
     }
 }

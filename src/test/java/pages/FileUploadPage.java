@@ -17,10 +17,11 @@ public class FileUploadPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void uploadFile(String path) {
+    public FileUploadPage uploadFile(String path) {
         File file = new File(path);
         chooseFileButton.sendKeys(file.getAbsolutePath());
         uploadButton.click();
+        return this;
     }
 
     public String getTitle() {

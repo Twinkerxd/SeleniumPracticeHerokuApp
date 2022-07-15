@@ -14,7 +14,7 @@ public class HorizontalSliderPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void setSliderValue(String direction, double value) {
+    public HorizontalSliderPage setSliderValue(String direction, double value) {
         do {
             if (direction.equals("right")) {
                 slider.sendKeys(Keys.ARROW_RIGHT);
@@ -22,6 +22,8 @@ public class HorizontalSliderPage extends BaseSeleniumPage {
                 slider.sendKeys(Keys.ARROW_LEFT);
             }
         } while (getSliderValue() != value);
+
+        return this;
     }
 
     public double getSliderValue() {

@@ -15,8 +15,9 @@ public class AddElementsPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void addElement() {
+    public AddElementsPage addElement() {
         addButton.click();
+        return this;
     }
 
     public void deleteElement() {
