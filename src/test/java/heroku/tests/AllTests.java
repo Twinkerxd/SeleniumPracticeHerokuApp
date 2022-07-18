@@ -115,16 +115,19 @@ public class AllTests extends BaseTests implements TestWatcher {
     @DisplayName("Checkboxes")
     public void selectingCheckboxes() {
         checkboxesPage = new MainPage().getCheckBoxesPage();
-        assertFalse(checkboxesPage.isCheckboxChecked(1));
-        assertTrue(checkboxesPage.isCheckboxChecked(2));
+        assertAll(
+                () -> assertFalse(checkboxesPage.isCheckboxChecked(1)),
+                () -> assertTrue(checkboxesPage.isCheckboxChecked(2)));
 
         checkboxesPage.clickCheckbox(1);
-        assertTrue(checkboxesPage.isCheckboxChecked(1));
-        assertTrue(checkboxesPage.isCheckboxChecked(2));
+        assertAll(
+                () -> assertTrue(checkboxesPage.isCheckboxChecked(1)),
+                () -> assertTrue(checkboxesPage.isCheckboxChecked(2)));
 
         checkboxesPage.clickCheckbox(2);
-        assertTrue(checkboxesPage.isCheckboxChecked(1));
-        assertFalse(checkboxesPage.isCheckboxChecked(2));
+        assertAll(
+                () -> assertTrue(checkboxesPage.isCheckboxChecked(1)),
+                () -> assertFalse(checkboxesPage.isCheckboxChecked(2)));
     }
 
     @Test
@@ -154,9 +157,7 @@ public class AllTests extends BaseTests implements TestWatcher {
         SoftAssertions softAssertions = new SoftAssertions();
 
         for (String src : brokenImagesPage.getAllSrcImg()) {
-            softAssertions.assertThat(brokenImagesPage
-                            .isImageHere(src))
-                    .isTrue();
+            softAssertions.assertThat(brokenImagesPage.isImageHere(src)).isTrue();
             saveScreenshot(src);
         }
         softAssertions.assertAll();
