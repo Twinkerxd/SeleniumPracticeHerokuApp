@@ -1,6 +1,6 @@
 package heroku.tests;
 
-import core.BaseSeleniumTests;
+import core.BaseTests;
 import io.qameta.allure.Link;
 import jdk.jfr.Description;
 import org.assertj.core.api.SoftAssertions;
@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("All tests")
-public class AllTests extends BaseSeleniumTests implements TestWatcher {
+public class AllTests extends BaseTests implements TestWatcher {
     private FileUploadPage fileUploadPage;
     private LoginPage loginPage;
     private AddElementsPage addElementsPage;

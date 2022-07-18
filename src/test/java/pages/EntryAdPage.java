@@ -1,11 +1,11 @@
 package pages;
 
-import core.BaseSeleniumPage;
+import core.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EntryAdPage extends BaseSeleniumPage {
+public class EntryAdPage extends BasePage {
     @FindBy(xpath = "//div[@class='modal-footer']") private WebElement closeButton;
     @FindBy(xpath = "//div[@id='modal']") private WebElement modalWindow;
     @FindBy(xpath = "//a[@id='restart-ad']") private WebElement clickHereButton;

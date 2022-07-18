@@ -1,11 +1,11 @@
 package pages;
 
-import core.BaseSeleniumPage;
+import core.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class iFramePage extends BaseSeleniumPage {
+public class iFramePage extends BasePage {
     @FindBy(xpath = "//p") private WebElement messageBox;
     @FindBy(xpath = "//iframe") private WebElement iframe;
     @FindBy(xpath = "//a[@href='/iframe']") private WebElement iframeLink;

@@ -1,11 +1,11 @@
 package pages;
 
-import core.BaseSeleniumPage;
+import core.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BaseSeleniumPage {
+public class LoginPage extends BasePage {
     @FindBy(linkText = "Form Authentication") private WebElement formAuthenticationLink;
     @FindBy(id = "username") private WebElement username;
     @FindBy(id = "password") private WebElement password;

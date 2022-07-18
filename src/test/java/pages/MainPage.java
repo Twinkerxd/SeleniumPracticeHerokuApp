@@ -1,11 +1,11 @@
 package pages;
 
-import core.BaseSeleniumPage;
+import core.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainPage extends BaseSeleniumPage {
+public class MainPage extends BasePage {
 
     @FindBy(xpath = "//a[@href='/upload']") private WebElement fileUpdateLink;
     @FindBy(xpath = "//a[@href='/login']") private WebElement formAuthenticationLink;

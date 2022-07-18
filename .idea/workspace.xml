@@ -4,19 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added parameterized tests">
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Refactoring">
+      <change afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/ManualTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseSeleniumTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/AddElementsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AddElementsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/AlertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AlertsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BrokenImagesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BrokenImagesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/DropDownPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/DropDownPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/EntryAdPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/EntryAdPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/FileUploadPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/FileUploadPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/FloatingMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/FloatingMenuPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/HorizontalSliderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HorizontalSliderPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/HoversPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HoversPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InfiniteScrollPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InfiniteScrollPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/MultipleWindowsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MultipleWindowsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/iFramePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/iFramePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +71,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests.floatingMenu">
+  <component name="RunManager" selected="JUnit.ManualTests.newTest">
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -75,22 +83,6 @@
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AllTests.alertCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="alertCheck" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,13 +135,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ManualTests.newTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.ManualTests" />
+      <option name="METHOD_NAME" value="newTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AllTests.floatingMenu" />
+        <item itemvalue="JUnit.ManualTests.newTest" />
         <item itemvalue="JUnit.AllTests" />
+        <item itemvalue="JUnit.AllTests.floatingMenu" />
         <item itemvalue="JUnit.AllTests.iFrame2" />
         <item itemvalue="JUnit.AllTests.newTab" />
-        <item itemvalue="JUnit.AllTests.alertCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -400,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657696299587</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Refactoring">
+      <created>1657887681617</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1657887681617</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +445,6 @@
     <MESSAGE value="Added new tab test" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="Added iframe test" />
-    <MESSAGE value="Refactoring" />
     <MESSAGE value="Added screenshot method" />
     <MESSAGE value="Rename method" />
     <MESSAGE value="Added switching windows methods" />
@@ -440,7 +454,8 @@
     <MESSAGE value="Removed spaces 3" />
     <MESSAGE value="Added some new imports" />
     <MESSAGE value="Added parameterized tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added parameterized tests" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

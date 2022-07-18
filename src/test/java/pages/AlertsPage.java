@@ -1,11 +1,11 @@
 package pages;
 
-import core.BaseSeleniumTests;
+import core.BaseTests;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AlertsPage extends BaseSeleniumTests {
+public class AlertsPage extends BaseTests {
     @FindBy(xpath = "//button[text()='Click for JS Alert']") private WebElement alertButton;
     @FindBy(xpath = "//button[text()='Click for JS Confirm']") private WebElement confirmButton;
     @FindBy(xpath = "//button[text()='Click for JS Prompt']") private WebElement promptButton;

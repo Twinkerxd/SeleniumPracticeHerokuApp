@@ -2,7 +2,6 @@ package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 
-public class BaseSeleniumTests implements TestWatcher {
+public class BaseTests implements TestWatcher {
     protected static WebDriver driver;
     protected static WebDriverWait wait;
     protected static Alert alert;
@@ -29,7 +28,7 @@ public class BaseSeleniumTests implements TestWatcher {
         driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10)); // how long we will wait the page
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); // how long we will wait the element
-        BaseSeleniumPage.setDriver(driver);
+        BasePage.setDriver(driver);
     }
 
     @BeforeEach
@@ -86,7 +85,6 @@ public class BaseSeleniumTests implements TestWatcher {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    @Step
     public void saveScreenshot() {
         Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));

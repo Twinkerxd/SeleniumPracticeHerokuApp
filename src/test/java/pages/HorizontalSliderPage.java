@@ -1,12 +1,12 @@
 package pages;
 
-import core.BaseSeleniumPage;
+import core.BasePage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HorizontalSliderPage extends BaseSeleniumPage {
+public class HorizontalSliderPage extends BasePage {
     @FindBy(xpath = "//div[@class='sliderContainer']/input") private WebElement slider;
     @FindBy(xpath = "//div[@class='sliderContainer']/span[@id='range']") private WebElement sliderValue;
 
