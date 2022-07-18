@@ -238,8 +238,8 @@ public class AllTests extends BaseTests implements TestWatcher {
     @DisplayName("Query Menu Page")
     public void queryMenu() {
         queryMenuPage = new MainPage().getQueryMenuPage();
-        mouseOverElement(queryMenuPage.getEnabledElement());
-        mouseOverElement(queryMenuPage.getDownloadsElement());
+        queryMenuPage.getEnabledElement();
+        queryMenuPage.getDownloadsElement();
         queryMenuPage.pdfButtonClick();
     }
 
@@ -247,8 +247,10 @@ public class AllTests extends BaseTests implements TestWatcher {
     @DisplayName("Simple alert")
     public void alertCheck() {
         alertsPage = new MainPage().getAlertsPage();
-        alertsPage.clickAlertButton();
-        waitForAlertReady().accept();
+        alertsPage
+                .clickAlertButton()
+                .waitForAlertReady()
+                .accept();
 
         assertEquals("You successfully clicked an alert", alertsPage.getResult());
     }
@@ -260,12 +262,12 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .getAlertsPage()
                 .clickConfirmButton();
 
-        waitForAlertReady().accept();
+        alertsPage.waitForAlertReady().accept();
 
         assertEquals("You clicked: Ok", alertsPage.getResult());
 
         alertsPage.clickConfirmButton();
-        waitForAlertReady().dismiss();
+        alertsPage.waitForAlertReady().dismiss();
 
         assertEquals("You clicked: Cancel", alertsPage.getResult());
     }
@@ -277,8 +279,8 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .getAlertsPage()
                 .clickPromptButton();
 
-        waitForAlertReady().sendKeys("Horus1613");
-        waitForAlertReady().accept();
+        alertsPage.waitForAlertReady().sendKeys("Horus1613");
+        alertsPage.waitForAlertReady().accept();
 
         assertEquals("You entered: Horus1613", alertsPage.getResult());
     }

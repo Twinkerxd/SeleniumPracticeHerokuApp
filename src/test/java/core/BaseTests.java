@@ -7,19 +7,16 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.TestWatcher;
-import org.openqa.selenium.*;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
 
 public class BaseTests implements TestWatcher {
     protected static WebDriver driver;
-    protected static WebDriverWait wait;
-    protected static Alert alert;
     protected static String device = "desktop";
 
     @BeforeAll
@@ -49,57 +46,11 @@ public class BaseTests implements TestWatcher {
 
     @AfterAll
     public static void end() {
-        //driver.close(); // tab in browser
         driver.quit(); // process in system
-    }
-
-    public boolean isElementDisplayed(WebElement webElement) {
-        try {
-            webElement.isDisplayed();
-            return true;
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    public boolean isElementReady(WebElement webElement) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
-        wait.until(ExpectedConditions.elementToBeClickable(webElement));
-        return true;
-    }
-
-    public Alert waitForAlertReady() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
-        alert = wait.until(ExpectedConditions.alertIsPresent());
-        return alert;
-    }
-
-    public void mouseOverElement(WebElement webElement) {
-        if (isElementReady(webElement)) {
-            new Actions(driver).moveToElement(webElement).perform();
-        }
-    }
-
-    public void scrollToElement(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
-    public void saveScreenshot() {
-        Allure.getLifecycle().addAttachment("Screenshot", "image/png", "png",
-                ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
     }
 
     public void saveScreenshot(String name) {
         Allure.getLifecycle().addAttachment(name, "image/png", "png",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
-    }
-
-    public void switchToNewWindow() {
-        driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(1));
-    }
-
-    public void switchToDefaultWindow() {
-        driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(0));
     }
 }

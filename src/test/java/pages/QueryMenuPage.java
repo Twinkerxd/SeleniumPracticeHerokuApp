@@ -14,12 +14,12 @@ public class QueryMenuPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public WebElement getEnabledElement() {
-        return enabled;
+    public void getEnabledElement() {
+        mouseOverElement(enabled);
     }
 
-    public WebElement getDownloadsElement() {
-        return downloads;
+    public void getDownloadsElement() {
+        mouseOverElement(downloads);
     }
 
     public void pdfButtonClick() {
