@@ -12,12 +12,15 @@ import java.time.Duration;
 import java.util.ArrayList;
 
 public class BasePage {
+    private static final Duration DEFAULT_TIMEOUT_SECONDS = Duration.ofSeconds(4);
+
     protected static WebDriver driver;
     protected static WebDriverWait wait;
     protected static Alert alert;
 
     public static void setDriver(WebDriver webDriver) {
         driver = webDriver;
+        wait = new WebDriverWait(driver,DEFAULT_TIMEOUT_SECONDS);
     }
 
     public boolean isElementDisplayed(WebElement webElement) {
@@ -29,20 +32,18 @@ public class BasePage {
         }
     }
 
-    public boolean isElementReady(WebElement webElement) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+    public boolean isElementClickable(WebElement webElement) {
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
         return true;
     }
 
     public Alert waitForAlertReady() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         alert = wait.until(ExpectedConditions.alertIsPresent());
         return alert;
     }
 
     public void mouseOverElement(WebElement webElement) {
-        if (isElementReady(webElement)) {
+        if (isElementClickable(webElement)) {
             new Actions(driver).moveToElement(webElement).perform();
         }
     }
@@ -58,5 +59,13 @@ public class BasePage {
 
     public void switchToDefaultWindow() {
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(0));
+    }
+
+    public void waitAndClick(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    }
+
+    public void waitVisibility(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 }

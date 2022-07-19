@@ -15,9 +15,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
+import static core.BaseTests.Device.DESKTOP;
+import static core.BaseTests.Device.MOBILE;
+
 public class BaseTests implements TestWatcher {
     protected static WebDriver driver;
-    protected static String device = "desktop";
+    Device device = DESKTOP;
 
     @BeforeAll
     public static void init() {
@@ -30,10 +33,10 @@ public class BaseTests implements TestWatcher {
 
     @BeforeEach
     public void setUp() {
-        if (device.equals("desktop")) {
+        if (device == DESKTOP) {
             driver.manage().window().maximize();
             driver.get("https://the-internet.herokuapp.com/");
-        } else if (device.equals("mobile")) {
+        } else if (device == MOBILE) {
             driver.manage().window().setSize(new Dimension(360, 740));
             driver.get("https://www.selenium.dev/");
         }
@@ -41,16 +44,20 @@ public class BaseTests implements TestWatcher {
 
     @AfterEach
     public void tearDown() {
-        saveScreenshot(device);
+        saveScreenshot(String.valueOf(device));
     }
 
     @AfterAll
     public static void end() {
-        driver.quit(); // process in system
+        driver.quit();
     }
 
     public void saveScreenshot(String name) {
         Allure.getLifecycle().addAttachment(name, "image/png", "png",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+    }
+
+    public enum Device {
+        DESKTOP, MOBILE
     }
 }

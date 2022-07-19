@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="assertAll">
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BaseTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AlertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AlertsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,18 +34,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Junk/Projects/SeleniumPracticeHerokuApp/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Junk/Projects/Youtube-qa-project&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_directory_selection": "C:/Junk/Projects/SeleniumPracticeHerokuApp/src/test/java",
+    "last_opened_file_path": "C:/Junk/Projects/Youtube-qa-project",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Junk\Projects\SeleniumPracticeHerokuApp\src\test\java" />
@@ -56,7 +54,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests">
+  <component name="RunManager" selected="JUnit.AllTests.allureAnnotations">
     <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -68,6 +66,22 @@
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests.allureAnnotations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
+      <option name="METHOD_NAME" value="allureAnnotations" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,22 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ManualTests.newTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.ManualTests" />
-      <option name="METHOD_NAME" value="newTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SeleniumPracticeHerokuApp" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -160,20 +158,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.AllTests.allureAnnotations" />
       <item itemvalue="JUnit.AllTests.infiniteScroll" />
       <item itemvalue="JUnit.AllTests.queryMenu" />
       <item itemvalue="JUnit.AllTests.selectingCheckboxes" />
       <item itemvalue="JUnit.AllTests" />
-      <item itemvalue="JUnit.ManualTests.newTest" />
       <item itemvalue="Maven.SeleniumPracticeHerokuApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AllTests.allureAnnotations" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.AllTests.queryMenu" />
         <item itemvalue="JUnit.AllTests.infiniteScroll" />
         <item itemvalue="JUnit.AllTests.selectingCheckboxes" />
-        <item itemvalue="JUnit.ManualTests.newTest" />
       </list>
     </recent_temporary>
   </component>
@@ -445,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658147370170</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Refactoring">
+      <created>1658151864203</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1658151864203</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -483,9 +488,9 @@
     <MESSAGE value="Removed spaces 3" />
     <MESSAGE value="Added some new imports" />
     <MESSAGE value="Added parameterized tests" />
-    <MESSAGE value="Refactoring" />
     <MESSAGE value="assertAll" />
-    <option name="LAST_COMMIT_MESSAGE" value="assertAll" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -45,11 +45,7 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Link(name = "allure", type = "mylink")
     @DisplayName("Allure Annotations")
     public void allureAnnotations() {
-        if (device.equals("desktop")) {
-            //do some stuff
-        } else if (device.equals("mobile")) {
-            //do some stuff
-        }
+        System.out.println("test");
     }
 
     @Test
