@@ -1,8 +1,6 @@
 package heroku.tests;
 
 import core.BaseTests;
-import io.qameta.allure.Link;
-import jdk.jfr.Description;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,9 +14,10 @@ import pages.*;
 
 import java.util.stream.Stream;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("All tests")
+@DisplayName("All tests suit")
 public class AllTests extends BaseTests implements TestWatcher {
     private FileUploadPage fileUploadPage;
     private LoginPage loginPage;
@@ -39,15 +38,6 @@ public class AllTests extends BaseTests implements TestWatcher {
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
 
-    @Test()
-    @Description("Some important text right here")
-    @Link("https://example.org")
-    @Link(name = "allure", type = "mylink")
-    @DisplayName("Allure Annotations")
-    public void allureAnnotations() {
-        System.out.println("test");
-    }
-
     @Test
     @DisplayName("Successful login")
     public void successfulLogin() {
@@ -55,7 +45,7 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .getLoginPage()
                 .login(LOGIN, PASSWORD);
 
-        assertTrue(loginPage.getFlashMessage().contains("You logged into a secure area!"));
+        assertThat(loginPage.getFlashMessage()).contains("You logged into a secure area!");
     }
 
     @Test

@@ -2,6 +2,7 @@ package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -44,7 +45,7 @@ public class BaseTests implements TestWatcher {
 
     @AfterEach
     public void tearDown() {
-        saveScreenshot(String.valueOf(device));
+        saveScreenshot(String.valueOf("Screenshot"));
     }
 
     @AfterAll
@@ -55,6 +56,10 @@ public class BaseTests implements TestWatcher {
     public void saveScreenshot(String name) {
         Allure.getLifecycle().addAttachment(name, "image/png", "png",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
+    }
+
+    @Step("{0}")
+    public void step(String text) {
     }
 
     public enum Device {
