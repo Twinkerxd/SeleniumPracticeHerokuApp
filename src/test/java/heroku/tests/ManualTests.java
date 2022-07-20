@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 @DisplayName("Manual tests suit")
 public class ManualTests extends BaseTests {
 
@@ -13,8 +15,8 @@ public class ManualTests extends BaseTests {
     @Link("https://example.org")
     @Link(name = "allure", type = "mylink")
     @Issue("https://www.google.com/")
-    @TmsLink("https://www.google.com/")
-    @DisplayName("First manual test")
+    @TmsLink("https://www.youtube.com/")
+    @DisplayName("Manual test")
     @Description("DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription")
     @Owner("Serega")
     @Severity(value = SeverityLevel.BLOCKER)
@@ -27,33 +29,39 @@ public class ManualTests extends BaseTests {
     @Disabled("reason: task №1613")
     @Test
     @DisplayName("Disabled test")
-    public void disabledTest() {
-        step("Opening page");
-        step("Entering text");
-        step("Clicking search button");
+    public void disabledTest() {}
+
+    @Test
+    public void failedTest() {
+        fail();
     }
 
-    @Epic("Epic")
+    @Epic("WEB")
+    @Feature("Contact page")
     @Test
-    public void epicTest1() {}
+    public void test3() {}
 
-    @Epic("Epic")
+    @Epic("WEB")
+    @Feature("Main page")
+    @Story("Login")
     @Test
-    public void epicTest2() {}
+    public void test4() {}
 
-    @Feature("Feature")
+    @Epic("WEB")
+    @Feature("Main page")
+    @Story("Search")
     @Test
-    public void featureTest1() {}
+    public void test5() {}
 
-    @Feature("Feature")
+    @Epic("MOBILE")
+    @Feature("Landing")
+    @Story("App promoting")
     @Test
-    public void featureTest2() {}
+    public void test1() {}
 
-    @Story("Story")
+    @Epic("MOBILE")
+    @Feature("Landing")
+    @Story("Promo text")
     @Test
-    public void storyTest1() {}
-
-    @Story("Story")
-    @Test
-    public void storyTest2() {}
+    public void test2() {}
 }

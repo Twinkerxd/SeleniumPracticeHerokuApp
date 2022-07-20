@@ -4,27 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added @Step and new annotations">
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added @Step to others methods">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/categories.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/environment.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/horus logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/horus logo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/ManualTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/ManualTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AddElementsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AddElementsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AlertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AlertsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BrokenImagesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BrokenImagesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CheckboxesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DropDownPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/DropDownPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/EntryAdPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/EntryAdPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/FileUploadPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/FileUploadPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/FloatingMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/FloatingMenuPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HorizontalSliderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HorizontalSliderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HoversPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HoversPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InfiniteScrollPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InfiniteScrollPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MultipleWindowsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MultipleWindowsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/iFramePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/iFramePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,40 +40,28 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_directory_selection": "C:/Junk/Projects/SeleniumPracticeHerokuApp/src/test/java",
-    "last_opened_file_path": "C:/Junk/Projects/Youtube-qa-project",
+    "last_opened_file_path": "C:/Junk/Projects/Selenium-herokuapp.com/target/allure-results",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Junk\Projects\Selenium-herokuapp.com\target\allure-results" />
       <recent name="C:\Junk\Projects\SeleniumPracticeHerokuApp\src\test\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Junk\Projects\Selenium-herokuapp.com\src\test\resources" />
+      <recent name="C:\Junk\Projects\Selenium-herokuapp.com\target\myFolder" />
       <recent name="C:\Junk\Projects\Selenium-herokuapp.com\target" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.heroku.tests in SeleniumPracticeHerokuApp">
-    <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ManualTests">
     <configuration name="AllTests.floatingMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -136,6 +109,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ManualTests.epicTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="MAIN_CLASS_NAME" value="heroku.tests.ManualTests" />
+      <option name="METHOD_NAME" value="epicTest1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="heroku.tests in SeleniumPracticeHerokuApp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
@@ -176,18 +165,18 @@
     <list>
       <item itemvalue="JUnit.ManualTests" />
       <item itemvalue="JUnit.ManualTests.disabledTest" />
+      <item itemvalue="JUnit.ManualTests.epicTest1" />
       <item itemvalue="JUnit.heroku.tests in SeleniumPracticeHerokuApp" />
-      <item itemvalue="JUnit.AllTests" />
       <item itemvalue="JUnit.AllTests.floatingMenu" />
       <item itemvalue="Maven.SeleniumPracticeHerokuApp" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.heroku.tests in SeleniumPracticeHerokuApp" />
         <item itemvalue="JUnit.ManualTests" />
+        <item itemvalue="JUnit.ManualTests.epicTest1" />
+        <item itemvalue="JUnit.heroku.tests in SeleniumPracticeHerokuApp" />
         <item itemvalue="JUnit.ManualTests.disabledTest" />
         <item itemvalue="JUnit.AllTests.floatingMenu" />
-        <item itemvalue="JUnit.AllTests" />
       </list>
     </recent_temporary>
   </component>
@@ -480,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658235598520</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added @Step to others methods">
+      <created>1658314419794</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1658314419794</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -495,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added broken images test" />
     <MESSAGE value="Added Entry Ad test" />
     <MESSAGE value="Added floating menu test" />
     <MESSAGE value="Added unsuccessful login test" />
@@ -520,7 +515,8 @@
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Added enum" />
     <MESSAGE value="Added @Step and new annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added @Step and new annotations" />
+    <MESSAGE value="Added @Step to others methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added @Step to others methods" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
