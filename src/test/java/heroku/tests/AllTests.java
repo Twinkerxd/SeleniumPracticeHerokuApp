@@ -9,7 +9,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.JavascriptExecutor;
 import pages.*;
 
 import java.util.stream.Stream;
@@ -56,7 +55,7 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .login(LOGIN, PASSWORD)
                 .logout();
 
-        assertTrue(loginPage.getFlashMessage().contains("You logged out of the secure area!"));
+        assertThat(loginPage.getFlashMessage()).contains("You logged out of the secure area!");
     }
 
     @Test
@@ -66,7 +65,7 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .getLoginPage()
                 .login("InvalidUsername", "InvalidPassword");
 
-        assertTrue(loginPage.getFlashMessage().contains("Your username is invalid!"));
+        assertThat(loginPage.getFlashMessage()).contains("Your username is invalid!");
     }
 
     @Test
@@ -74,11 +73,11 @@ public class AllTests extends BaseTests implements TestWatcher {
     public void addingElements() {
         addElementsPage = new MainPage().getAddElementsPage();
 
-        assertEquals(0, addElementsPage.deleteButtonsList().size());
+        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(0);
 
         addElementsPage.addElement();
 
-        assertEquals(1, addElementsPage.deleteButtonsList().size());
+        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(1);
     }
 
     @Test
@@ -86,7 +85,7 @@ public class AllTests extends BaseTests implements TestWatcher {
     public void deletingElements() {
         addElementsPage = new MainPage().getAddElementsPage();
 
-        assertEquals(0, addElementsPage.deleteButtonsList().size());
+        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(0);
 
         addElementsPage
                 .addElement()
@@ -94,7 +93,7 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .addElement()
                 .deleteElement();
 
-        assertEquals(2, addElementsPage.deleteButtonsList().size());
+        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(2);
     }
 
     @Test
@@ -169,9 +168,10 @@ public class AllTests extends BaseTests implements TestWatcher {
     @DisplayName("Floating Menu")
     public void floatingMenu() {
         floatingMenuPage = new MainPage().getFloatingMenuPage();
+        floatingMenuPage.scrollPageFirst();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 4275)");
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0, 4275)");
 
         assertEquals("top: 4237px;", floatingMenuPage.getMenuCoordinates());
     }
@@ -224,8 +224,8 @@ public class AllTests extends BaseTests implements TestWatcher {
     @DisplayName("Query Menu Page")
     public void queryMenu() {
         queryMenuPage = new MainPage().getQueryMenuPage();
-        queryMenuPage.getEnabledElement();
-        queryMenuPage.getDownloadsElement();
+        queryMenuPage.mouseoverEnabledElement();
+        queryMenuPage.mouseoverDownloadsElement();
         queryMenuPage.pdfButtonClick();
     }
 
@@ -248,12 +248,12 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .getAlertsPage()
                 .clickConfirmButton();
 
-        alertsPage.waitForAlertReady().accept();
+        alertsPage.clickAlertAccept();
 
         assertEquals("You clicked: Ok", alertsPage.getResult());
 
         alertsPage.clickConfirmButton();
-        alertsPage.waitForAlertReady().dismiss();
+        alertsPage.clickAlertDismiss();
 
         assertEquals("You clicked: Cancel", alertsPage.getResult());
     }
@@ -265,8 +265,8 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .getAlertsPage()
                 .clickPromptButton();
 
-        alertsPage.waitForAlertReady().sendKeys("Horus1613");
-        alertsPage.waitForAlertReady().accept();
+        alertsPage.setAlertValue("Horus1613");
+        alertsPage.clickAlertAccept();
 
         assertEquals("You entered: Horus1613", alertsPage.getResult());
     }

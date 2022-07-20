@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,6 +16,7 @@ public class MultipleWindowsPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Clicking clickhere button")
     public MultipleWindowsPage clickClickHereButton() {
         clickHereButton.click();
         return this;
@@ -24,10 +26,12 @@ public class MultipleWindowsPage extends BasePage {
         return new ArrayList<>(driver.getWindowHandles());
     }
 
+    @Step("Getting header text")
     public String getHeader() {
         return header.getText();
     }
 
+    @Step("Closing tab")
     public MultipleWindowsPage closeTab() {
         driver.close();
         return this;

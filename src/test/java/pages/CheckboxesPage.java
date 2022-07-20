@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +15,7 @@ public class CheckboxesPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Is checkbox checked")
     public boolean isCheckboxChecked(int checkboxPageNumber) {
         return checkboxes.get(checkboxPageNumber - 1).isSelected();
     }

@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ public class HorizontalSliderPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Setting new slider value")
     public HorizontalSliderPage setSliderValue(String direction, double value) {
         do {
             if (direction.equals("right")) {
@@ -26,6 +28,7 @@ public class HorizontalSliderPage extends BasePage {
         return this;
     }
 
+    @Step("Getting current slider value")
     public double getSliderValue() {
         return Double.parseDouble(sliderValue.getText());
     }

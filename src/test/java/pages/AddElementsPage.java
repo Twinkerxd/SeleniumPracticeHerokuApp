@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,16 +16,19 @@ public class AddElementsPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Adding new element")
     public AddElementsPage addElement() {
         addButton.click();
         return this;
     }
 
+    @Step("Deleting one element")
     public void deleteElement() {
         deleteButtons.get(0).click();
     }
 
-    public List<WebElement> deleteButtonsList() {
-        return deleteButtons;
+    @Step("Get count of delete buttons")
+    public int deleteButtonsCount() {
+        return deleteButtons.size();
     }
 }

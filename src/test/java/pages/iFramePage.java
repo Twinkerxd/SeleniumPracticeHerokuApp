@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +15,7 @@ public class iFramePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Sending message to iframe")
     public iFramePage sendMessage(String text) {
         driver.switchTo().frame(iframe);
         messageBox.clear();
@@ -21,10 +23,12 @@ public class iFramePage extends BasePage {
         return this;
     }
 
+    @Step("Getting text")
     public String getText() {
         return messageBox.getText();
     }
 
+    @Step("Clicking iframe")
     public iFramePage iFrameClick() {
         iframeLink.click();
         return this;

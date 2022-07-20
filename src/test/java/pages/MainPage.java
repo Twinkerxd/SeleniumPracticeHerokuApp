@@ -30,6 +30,7 @@ public class MainPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Opening file upload page")
     public FileUploadPage getFileUploadPage() {
         fileUpdateLink.click();
         return new FileUploadPage();
@@ -41,16 +42,19 @@ public class MainPage extends BasePage {
         return new LoginPage();
     }
 
+    @Step("Opening elements page")
     public AddElementsPage getAddElementsPage() {
         addElementsLink.click();
         return new AddElementsPage();
     }
 
+    @Step("Opening checkboxes page")
     public CheckboxesPage getCheckBoxesPage() {
         checkboxesLink.click();
         return new CheckboxesPage();
     }
 
+    @Step("Opening dropdown page")
     public DropDownPage getDropDownPage() {
         dropDownLink.click();
         return new DropDownPage();
@@ -61,51 +65,61 @@ public class MainPage extends BasePage {
         return new BasicAuthPage();
     }
 
+    @Step("Opening images page")
     public BrokenImagesPage getBrokenImagesPage() {
         brokenImagesLink.click();
         return new BrokenImagesPage();
     }
 
+    @Step("Opening entry page")
     public EntryAdPage getEntryAdPage() {
         entryAdLink.click();
         return new EntryAdPage();
     }
 
+    @Step("Opening floating menu page")
     public FloatingMenuPage getFloatingMenuPage() {
         floatingMenuLink.click();
         return new FloatingMenuPage();
     }
 
+    @Step("Opening slider page")
     public HorizontalSliderPage getHorizontalSliderPage() {
         horizontalSliderLink.click();
         return new HorizontalSliderPage();
     }
 
+    @Step("Opening hovers page")
     public HoversPage getHoversPage() {
         hoversLink.click();
         return new HoversPage();
     }
 
+    @Step("Opening scroll page")
     public InfiniteScrollPage getInfiniteScrollPage() {
         infiniteScrollLink.click();
         return new InfiniteScrollPage();
     }
 
+    @Step("Opening query menu page")
     public QueryMenuPage getQueryMenuPage() {
         jQueryUiMenuLink.click();
         return new QueryMenuPage();
     }
 
+    @Step("Opening alerts page")
     public AlertsPage getAlertsPage() {
         alertsLink.click();
         return new AlertsPage();
     }
 
+    @Step("Opening multiple windows page")
     public MultipleWindowsPage getMultipleWindowsPage() {
         multipleWindowsLink.click();
         return new MultipleWindowsPage();
     }
 
+    @Step("Opening iframe page")
     public iFramePage getiFramePage() {
         iframeLink.click();
         return new iFramePage();

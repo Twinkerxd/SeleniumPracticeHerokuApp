@@ -1,5 +1,6 @@
 package core;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -53,10 +54,17 @@ public class BasePage {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public void scrollPage() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 4275)");
+    }
+
+    @Step("Switching to the new window")
     public void switchToNewWindow() {
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(1));
     }
 
+    @Step("Switching to the default window")
     public void switchToDefaultWindow() {
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(0));
     }

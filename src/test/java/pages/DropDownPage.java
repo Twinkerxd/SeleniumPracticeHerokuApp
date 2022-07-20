@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,10 +16,12 @@ public class DropDownPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Is option selected")
     public boolean isOptionSelected(int optionNumber) {
         return dropdownElements.get(optionNumber).isSelected();
     }
 
+    @Step("Set dropdown value")
     public DropDownPage setDropdownValue(int optionNumber) {
         dropdown.click();
         dropdownElements.get(optionNumber).click();

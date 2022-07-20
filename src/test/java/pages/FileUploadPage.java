@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,6 +18,7 @@ public class FileUploadPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Uploading file")
     public FileUploadPage uploadFile(String path) {
         File file = new File(path);
         chooseFileButton.sendKeys(file.getAbsolutePath());

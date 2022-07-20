@@ -27,5 +27,33 @@ public class ManualTests extends BaseTests {
     @Disabled("reason: task №1613")
     @Test
     @DisplayName("Disabled test")
-    public void disabledTest() {}
+    public void disabledTest() {
+        step("Opening page");
+        step("Entering text");
+        step("Clicking search button");
+    }
+
+    @Epic("Epic")
+    @Test
+    public void epicTest1() {}
+
+    @Epic("Epic")
+    @Test
+    public void epicTest2() {}
+
+    @Feature("Feature")
+    @Test
+    public void featureTest1() {}
+
+    @Feature("Feature")
+    @Test
+    public void featureTest2() {}
+
+    @Story("Story")
+    @Test
+    public void storyTest1() {}
+
+    @Story("Story")
+    @Test
+    public void storyTest2() {}
 }

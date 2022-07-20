@@ -1,6 +1,7 @@
 package pages;
 
 import core.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,6 +27,7 @@ public class BrokenImagesPage extends BasePage {
         return str;
     }
 
+    @Step("Is image here")
     public boolean isImageHere(String src) {
         driver.get(src);
         return isElementDisplayed(image);

@@ -26,11 +26,13 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    @Step("Logout")
     public LoginPage logout() {
         logoutButton.click();
         return this;
     }
 
+    @Step("Getting page message")
     public String getFlashMessage() {
         return flashMessage.getText();
     }
