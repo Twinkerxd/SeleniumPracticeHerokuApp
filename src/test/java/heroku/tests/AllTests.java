@@ -1,6 +1,7 @@
 package heroku.tests;
 
 import core.BaseTests;
+import io.qameta.allure.Epic;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Epic("Other")
 @DisplayName("All tests suit")
 public class AllTests extends BaseTests implements TestWatcher {
     private FileUploadPage fileUploadPage;
@@ -33,6 +35,7 @@ public class AllTests extends BaseTests implements TestWatcher {
     private AlertsPage alertsPage;
     private MultipleWindowsPage multipleWindowsPage;
     private iFramePage iFramePage;
+    private DynamicLoadingPage dynamicLoadingPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -130,7 +133,7 @@ public class AllTests extends BaseTests implements TestWatcher {
     public void FileUpload() {
         fileUploadPage = new MainPage()
                 .getFileUploadPage()
-                .uploadFile("src/horus logo.jpg");
+                .uploadFile("src/test/resources/horus logo.jpg");
 
         assertEquals("File Uploaded!", fileUploadPage.getTitle());
     }
@@ -321,5 +324,27 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .sendMessage(text);
 
         assertEquals(text, iFramePage.getText());
+    }
+
+    @Test
+    @DisplayName("Element on page that is hidden")
+    public void hiddenElement() {
+        dynamicLoadingPage = new MainPage()
+                .getDynamicLoadingPage()
+                .clickExampleOneLink()
+                .clickStartButton();
+
+        assertThat(dynamicLoadingPage.getHiddenText()).isEqualTo("Hello World!");
+    }
+
+    @Test
+    @DisplayName("Element rendered after the fact")
+    public void hiddenElement2() {
+        dynamicLoadingPage = new MainPage()
+                .getDynamicLoadingPage()
+                .clickExampleTwoLink()
+                .clickStartButton();
+
+        assertThat(dynamicLoadingPage.getHiddenText()).isEqualTo("Hello World!");
     }
 }

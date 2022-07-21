@@ -24,7 +24,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@href='/javascript_alerts']") private WebElement alertsLink;
     @FindBy(xpath = "//a[@href='/windows']") private WebElement multipleWindowsLink;
     @FindBy(xpath = "//a[@href='/frames']") private WebElement iframeLink;
-
+    @FindBy(xpath = "//a[@href='/dynamic_loading']") private WebElement dynamicLoadingLink;
 
     public MainPage() {
         PageFactory.initElements(driver, this);
@@ -123,5 +123,11 @@ public class MainPage extends BasePage {
     public iFramePage getiFramePage() {
         iframeLink.click();
         return new iFramePage();
+    }
+
+    @Step("Opening dynamic loading page")
+    public DynamicLoadingPage getDynamicLoadingPage() {
+        dynamicLoadingLink.click();
+        return new DynamicLoadingPage();
     }
 }

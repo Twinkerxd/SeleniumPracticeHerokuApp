@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 
 public class BasePage {
-    private static final Duration DEFAULT_TIMEOUT_SECONDS = Duration.ofSeconds(4);
+    private static final Duration DEFAULT_TIMEOUT_SECONDS = Duration.ofSeconds(7);
 
     protected static WebDriver driver;
     protected static WebDriverWait wait;
