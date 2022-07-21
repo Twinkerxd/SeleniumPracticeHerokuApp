@@ -356,4 +356,13 @@ public class AllTests extends BaseTests implements TestWatcher {
                 .getHiddenText())
                 .isEqualTo("My default text");
     }
+
+    @Test
+    @DisplayName("Nested frames")
+    public void nestedFrames() {
+        assertThat(new MainPage()
+                .getNestedFramesPage()
+                .iframeText(NestedFramesPage.frame.middle))
+                .isEqualTo("MIDDLE");
+    }
 }

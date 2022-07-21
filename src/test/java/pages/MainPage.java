@@ -26,6 +26,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@href='/frames']") private WebElement iframeLink;
     @FindBy(xpath = "//a[@href='/dynamic_loading']") private WebElement dynamicLoadingLink;
     @FindBy(xpath = "//a[@href='/shadowdom']") private WebElement shadowDomLink;
+    @FindBy(xpath = "//a[@href='/nested_frames']") private WebElement nestedFrames;
 
     public MainPage() {
         PageFactory.initElements(driver, this);
@@ -136,5 +137,11 @@ public class MainPage extends BasePage {
     public ShadowDomPage getShadowDomPage() {
         shadowDomLink.click();
         return new ShadowDomPage();
+    }
+
+    @Step("Opening nested frames page")
+    public NestedFramesPage getNestedFramesPage() {
+        nestedFrames.click();
+        return new NestedFramesPage();
     }
 }
