@@ -347,4 +347,13 @@ public class AllTests extends BaseTests implements TestWatcher {
 
         assertThat(dynamicLoadingPage.getHiddenText()).isEqualTo("Hello World!");
     }
+
+    @Test
+    @DisplayName("Shadow dom")
+    public void shadowDom() {
+        assertThat(new MainPage()
+                .getShadowDomPage()
+                .getHiddenText())
+                .isEqualTo("My default text");
+    }
 }

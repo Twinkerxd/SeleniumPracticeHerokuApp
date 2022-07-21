@@ -25,6 +25,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@href='/windows']") private WebElement multipleWindowsLink;
     @FindBy(xpath = "//a[@href='/frames']") private WebElement iframeLink;
     @FindBy(xpath = "//a[@href='/dynamic_loading']") private WebElement dynamicLoadingLink;
+    @FindBy(xpath = "//a[@href='/shadowdom']") private WebElement shadowDomLink;
 
     public MainPage() {
         PageFactory.initElements(driver, this);
@@ -129,5 +130,11 @@ public class MainPage extends BasePage {
     public DynamicLoadingPage getDynamicLoadingPage() {
         dynamicLoadingLink.click();
         return new DynamicLoadingPage();
+    }
+
+    @Step("Opening shadow dom page")
+    public ShadowDomPage getShadowDomPage() {
+        shadowDomLink.click();
+        return new ShadowDomPage();
     }
 }
