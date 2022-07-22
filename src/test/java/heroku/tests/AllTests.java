@@ -40,6 +40,10 @@ public class AllTests extends BaseTests implements TestWatcher {
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
 
+    /**
+     * All tests description
+     */
+
     @Test
     @DisplayName("Successful login")
     public void successfulLogin() {
@@ -134,6 +138,7 @@ public class AllTests extends BaseTests implements TestWatcher {
         fileUploadPage = new MainPage()
                 .getFileUploadPage()
                 .uploadFile("src/test/resources/horus logo.jpg");
+        // todo serega
 
         assertEquals("File Uploaded!", fileUploadPage.getTitle());
     }

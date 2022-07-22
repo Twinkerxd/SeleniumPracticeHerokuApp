@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added shadow dom test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/NestedFramesPage.java" afterDir="false" />
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added nested frame test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MainPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -498,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658398420092</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Added nested frame test">
+      <created>1658408282297</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1658408282297</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -513,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added slider test" />
     <MESSAGE value="Added hover test and some refactor" />
     <MESSAGE value="Added infinite scroll test" />
     <MESSAGE value="Added query menu test" />
@@ -538,7 +542,8 @@
     <MESSAGE value="Added @Epic @Feature @Story" />
     <MESSAGE value="Added dynamic loading elements tests" />
     <MESSAGE value="Added shadow dom test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added shadow dom test" />
+    <MESSAGE value="Added nested frame test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added nested frame test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
