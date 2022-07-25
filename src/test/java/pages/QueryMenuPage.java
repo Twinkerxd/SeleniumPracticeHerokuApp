@@ -16,13 +16,15 @@ public class QueryMenuPage extends BasePage {
     }
 
     @Step("Mouseover enabled element")
-    public void mouseoverEnabledElement() {
+    public QueryMenuPage mouseoverEnabledElement() {
         mouseOverElement(enabled);
+        return this;
     }
 
     @Step("Mouseover downloads element")
-    public void mouseoverDownloadsElement() {
+    public QueryMenuPage mouseoverDownloadsElement() {
         mouseOverElement(downloads);
+        return this;
     }
 
     @Step("Clicking pdf button")

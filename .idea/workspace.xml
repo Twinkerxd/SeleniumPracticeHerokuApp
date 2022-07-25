@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added nested frame test">
+    <list default="true" id="3e71580b-d5f4-43b9-be71-3d4592c2255a" name="Changes" comment="Added description">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heroku/tests/AllTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AddElementsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AddElementsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/QueryMenuPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +60,8 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AllTests.nestedFrames">
-    <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.heroku.tests in SeleniumPracticeHerokuApp">
+    <configuration name="AllTests.FileUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -69,28 +71,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AllTests.hiddenElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPracticeHerokuApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="heroku.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="heroku.tests" />
-      <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="hiddenElement" />
+      <option name="METHOD_NAME" value="FileUpload" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.hiddenElement2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.queryMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -100,13 +87,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="hiddenElement2" />
+      <option name="METHOD_NAME" value="queryMenu" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.nestedFrames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.qwe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +103,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="nestedFrames" />
+      <option name="METHOD_NAME" value="qwe" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AllTests.shadowDom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AllTests.selectingCheckboxes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeleniumPracticeHerokuApp" />
       <extension name="coverage">
         <pattern>
@@ -132,8 +119,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="heroku.tests" />
       <option name="MAIN_CLASS_NAME" value="heroku.tests.AllTests" />
-      <option name="METHOD_NAME" value="shadowDom" />
+      <option name="METHOD_NAME" value="selectingCheckboxes" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="heroku.tests in SeleniumPracticeHerokuApp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPracticeHerokuApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="heroku.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="heroku.tests" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,20 +163,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.AllTests" />
-      <item itemvalue="JUnit.AllTests.hiddenElement" />
-      <item itemvalue="JUnit.AllTests.hiddenElement2" />
-      <item itemvalue="JUnit.AllTests.nestedFrames" />
-      <item itemvalue="JUnit.AllTests.shadowDom" />
+      <item itemvalue="JUnit.AllTests.queryMenu" />
+      <item itemvalue="JUnit.AllTests.qwe" />
+      <item itemvalue="JUnit.AllTests.selectingCheckboxes" />
+      <item itemvalue="JUnit.AllTests.FileUpload" />
+      <item itemvalue="JUnit.heroku.tests in SeleniumPracticeHerokuApp" />
       <item itemvalue="Maven.SeleniumPracticeHerokuApp" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AllTests.nestedFrames" />
-        <item itemvalue="JUnit.AllTests.shadowDom" />
-        <item itemvalue="JUnit.AllTests.hiddenElement2" />
-        <item itemvalue="JUnit.AllTests.hiddenElement" />
-        <item itemvalue="JUnit.AllTests" />
+        <item itemvalue="JUnit.heroku.tests in SeleniumPracticeHerokuApp" />
+        <item itemvalue="JUnit.AllTests.qwe" />
+        <item itemvalue="JUnit.AllTests.selectingCheckboxes" />
+        <item itemvalue="JUnit.AllTests.FileUpload" />
+        <item itemvalue="JUnit.AllTests.queryMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -503,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658408282297</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Added description">
+      <created>1658497407775</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1658497407775</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -518,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added hover test and some refactor" />
     <MESSAGE value="Added infinite scroll test" />
     <MESSAGE value="Added query menu test" />
     <MESSAGE value="Added alerts tests" />
@@ -543,7 +550,8 @@
     <MESSAGE value="Added dynamic loading elements tests" />
     <MESSAGE value="Added shadow dom test" />
     <MESSAGE value="Added nested frame test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added nested frame test" />
+    <MESSAGE value="Added description" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added description" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -20,22 +20,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @Epic("Other")
 @DisplayName("All tests suit")
 public class AllTests extends BaseTests implements TestWatcher {
-    private FileUploadPage fileUploadPage;
-    private LoginPage loginPage;
     private AddElementsPage addElementsPage;
     private CheckboxesPage checkboxesPage;
-    private DropDownPage dropDownPage;
-    private BrokenImagesPage brokenImagesPage;
-    private EntryAdPage entryAdPage;
-    private FloatingMenuPage floatingMenuPage;
-    private HorizontalSliderPage horizontalSliderPage;
-    private HoversPage hoversPage;
-    private InfiniteScrollPage infiniteScrollPage;
-    private QueryMenuPage queryMenuPage;
     private AlertsPage alertsPage;
-    private MultipleWindowsPage multipleWindowsPage;
-    private iFramePage iFramePage;
-    private DynamicLoadingPage dynamicLoadingPage;
 
     private static final String LOGIN = "tomsmith";
     private static final String PASSWORD = "SuperSecretPassword!";
@@ -47,32 +34,32 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Successful login")
     public void successfulLogin() {
-        loginPage = new MainPage()
+        assertThat(new MainPage()
                 .getLoginPage()
-                .login(LOGIN, PASSWORD);
-
-        assertThat(loginPage.getFlashMessage()).contains("You logged into a secure area!");
+                .login(LOGIN, PASSWORD)
+                .getFlashMessage()
+                .contains("You logged into a secure area!"));
     }
 
     @Test
     @DisplayName("Successful logout")
     public void successfulLogout() {
-        loginPage = new MainPage()
+        assertThat(new MainPage()
                 .getLoginPage()
                 .login(LOGIN, PASSWORD)
-                .logout();
-
-        assertThat(loginPage.getFlashMessage()).contains("You logged out of the secure area!");
+                .logout()
+                .getFlashMessage()
+                .contains("You logged out of the secure area!"));
     }
 
     @Test
     @DisplayName("Not successful login")
     public void notSuccessfulLogin() {
-        loginPage = new MainPage()
+        assertThat(new MainPage()
                 .getLoginPage()
-                .login("InvalidUsername", "InvalidPassword");
-
-        assertThat(loginPage.getFlashMessage()).contains("Your username is invalid!");
+                .login("InvalidUsername", "InvalidPassword")
+                .getFlashMessage()
+                .contains("Your username is invalid!"));
     }
 
     @Test
@@ -80,27 +67,33 @@ public class AllTests extends BaseTests implements TestWatcher {
     public void addingElements() {
         addElementsPage = new MainPage().getAddElementsPage();
 
-        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(0);
+        assertThat(addElementsPage
+                .getCountOfDeletedButtons())
+                .isEqualTo(0);
 
-        addElementsPage.addElement();
-
-        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(1);
+        assertThat(addElementsPage
+                .addElement()
+                .getCountOfDeletedButtons())
+                .isEqualTo(1);
     }
 
     @Test
     @DisplayName("Deleting elements")
     public void deletingElements() {
-        addElementsPage = new MainPage().getAddElementsPage();
+        addElementsPage = new MainPage()
+                .getAddElementsPage();
 
-        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(0);
+        assertThat(addElementsPage
+                .getCountOfDeletedButtons())
+                .isEqualTo(0);
 
-        addElementsPage
+        assertThat(addElementsPage
                 .addElement()
                 .addElement()
                 .addElement()
-                .deleteElement();
-
-        assertThat(addElementsPage.deleteButtonsCount()).isEqualTo(2);
+                .deleteElement()
+                .getCountOfDeletedButtons())
+                .isEqualTo(2);
     }
 
     @Test
@@ -125,28 +118,26 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Dropdown")
     public void selectElementDropdown() {
-        dropDownPage = new MainPage()
+        assertTrue(new MainPage()
                 .getDropDownPage()
-                .setDropdownValue(1);
-
-        assertTrue(dropDownPage.isOptionSelected(1));
+                .setDropdownValue(1)
+                .isOptionSelected(1));
     }
 
     @Test
     @DisplayName("File upload")
     public void FileUpload() {
-        fileUploadPage = new MainPage()
+        assertEquals("File Uploaded!",
+                new MainPage()
                 .getFileUploadPage()
-                .uploadFile("src/test/resources/horus logo.jpg");
-        // todo serega
-
-        assertEquals("File Uploaded!", fileUploadPage.getTitle());
+                .uploadFile("src/test/resources/horus logo.jpg")
+                .getTitle());
     }
 
     @Test
     @DisplayName("Broken images")
     public void brokenImages() {
-        brokenImagesPage = new MainPage().getBrokenImagesPage();
+        BrokenImagesPage brokenImagesPage = new MainPage().getBrokenImagesPage();
         SoftAssertions softAssertions = new SoftAssertions();
 
         for (String src : brokenImagesPage.getAllSrcImg()) {
@@ -159,7 +150,7 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Entry Ad")
     public void closeAds() throws InterruptedException {
-        entryAdPage = new MainPage().getEntryAdPage();
+        EntryAdPage entryAdPage = new MainPage().getEntryAdPage();
 
         do {
             entryAdPage.clickHereButtonClick();
@@ -175,9 +166,8 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Floating Menu")
     public void floatingMenu() {
-        floatingMenuPage = new MainPage().getFloatingMenuPage();
+        FloatingMenuPage floatingMenuPage = new MainPage().getFloatingMenuPage();
         floatingMenuPage.scrollPageFirst();
-
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollBy(0, 4275)");
 
@@ -187,7 +177,7 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Horizontal Slider")
     public void horizontalSlider() {
-        horizontalSliderPage = new MainPage()
+        HorizontalSliderPage horizontalSliderPage = new MainPage()
                 .getHorizontalSliderPage()
                 .setSliderValue("right", 5);
 
@@ -206,18 +196,17 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Hover")
     public void hoverAndClick() {
-        hoversPage = new MainPage()
+        assertEquals("Not Found",
+                new MainPage()
                 .getHoversPage()
                 .mouseOverFirstAvatar()
-                .viewProfileClick();
-
-        assertEquals("Not Found", hoversPage.getTitle());
+                .viewProfileClick().getTitle());
     }
 
     @Test
     @DisplayName("Infinite Scroll")
     public void infiniteScroll() throws InterruptedException {
-        infiniteScrollPage = new MainPage().getInfiniteScrollPage();
+        InfiniteScrollPage infiniteScrollPage = new MainPage().getInfiniteScrollPage();
 
         Thread.sleep(500); // no-one will see that (need to complete rendering page)
 
@@ -231,10 +220,11 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Query Menu Page")
     public void queryMenu() {
-        queryMenuPage = new MainPage().getQueryMenuPage();
-        queryMenuPage.mouseoverEnabledElement();
-        queryMenuPage.mouseoverDownloadsElement();
-        queryMenuPage.pdfButtonClick();
+        new MainPage()
+                .getQueryMenuPage()
+                .mouseoverEnabledElement()
+                .mouseoverDownloadsElement()
+                .pdfButtonClick();
     }
 
     @Test
@@ -282,7 +272,7 @@ public class AllTests extends BaseTests implements TestWatcher {
     @Test
     @DisplayName("Open new tab")
     public void newTab() {
-        multipleWindowsPage = new MainPage()
+        MultipleWindowsPage multipleWindowsPage = new MainPage()
                 .getMultipleWindowsPage()
                 .clickClickHereButton();
 
@@ -303,12 +293,12 @@ public class AllTests extends BaseTests implements TestWatcher {
     @MethodSource("dataProvider")
     @DisplayName("iFrame")
     public void iFrame(String text, int number) {
-        iFramePage = new MainPage()
+        assertEquals(text + number,
+                new MainPage()
                 .getiFramePage()
                 .iFrameClick()
-                .sendMessage(text + number);
-
-        assertEquals(text + number, iFramePage.getText());
+                .sendMessage(text + number)
+                .getText());
     }
 
     private static Stream<Arguments> dataProvider() {
@@ -323,34 +313,33 @@ public class AllTests extends BaseTests implements TestWatcher {
     @ValueSource(strings = { "qwe", "rty" })
     @DisplayName("iFrame2")
     public void iFrame2(String text) {
-        iFramePage = new MainPage()
+        assertEquals(text,
+                new MainPage()
                 .getiFramePage()
                 .iFrameClick()
-                .sendMessage(text);
-
-        assertEquals(text, iFramePage.getText());
+                .sendMessage(text).getText());
     }
 
     @Test
     @DisplayName("Element on page that is hidden")
     public void hiddenElement() {
-        dynamicLoadingPage = new MainPage()
+        assertThat(new MainPage()
                 .getDynamicLoadingPage()
                 .clickExampleOneLink()
-                .clickStartButton();
-
-        assertThat(dynamicLoadingPage.getHiddenText()).isEqualTo("Hello World!");
+                .clickStartButton()
+                .getHiddenText())
+                .isEqualTo("Hello World!");
     }
 
     @Test
     @DisplayName("Element rendered after the fact")
     public void hiddenElement2() {
-        dynamicLoadingPage = new MainPage()
+        assertThat(new MainPage()
                 .getDynamicLoadingPage()
                 .clickExampleTwoLink()
-                .clickStartButton();
-
-        assertThat(dynamicLoadingPage.getHiddenText()).isEqualTo("Hello World!");
+                .clickStartButton()
+                .getHiddenText())
+                .isEqualTo("Hello World!");
     }
 
     @Test

@@ -23,12 +23,13 @@ public class AddElementsPage extends BasePage {
     }
 
     @Step("Deleting one element")
-    public void deleteElement() {
+    public AddElementsPage deleteElement() {
         deleteButtons.get(0).click();
+        return this;
     }
 
     @Step("Get count of delete buttons")
-    public int deleteButtonsCount() {
+    public int getCountOfDeletedButtons() {
         return deleteButtons.size();
     }
 }
