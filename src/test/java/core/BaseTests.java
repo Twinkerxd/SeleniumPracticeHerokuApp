@@ -45,12 +45,14 @@ public class BaseTests implements TestWatcher {
 
     @AfterEach
     public void tearDown() {
-        saveScreenshot(String.valueOf("Screenshot"));
+        saveScreenshot("Screenshot");
     }
 
     @AfterAll
     public static void end() {
-        driver.quit();
+        if (driver != null) {
+            driver.close();
+        }
     }
 
     public void saveScreenshot(String name) {
