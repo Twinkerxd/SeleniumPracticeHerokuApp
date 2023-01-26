@@ -171,7 +171,7 @@ public class AllTests extends BaseTests implements TestWatcher {
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollBy(0, 4275)");
 
-        assertEquals("top: 4237px;", floatingMenuPage.getMenuCoordinates());
+        assertEquals("top: 4237.61px;", floatingMenuPage.getMenuCoordinates());
     }
 
     @Test

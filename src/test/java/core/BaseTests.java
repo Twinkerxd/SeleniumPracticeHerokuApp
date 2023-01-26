@@ -27,8 +27,10 @@ public class BaseTests implements TestWatcher {
     public static void init() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10)); // how long we will wait the page
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); // how long we will wait the element
+
         BasePage.setDriver(driver);
     }
 
