@@ -9,7 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class CheckboxesPage extends BasePage {
-    @FindBy(xpath = "//input[@type='checkbox']") private List<WebElement> checkboxes;
+    @FindBy(xpath = "//input[@type='checkbox']")
+    private List<WebElement> checkboxes;
 
     public CheckboxesPage() {
         PageFactory.initElements(driver, this);

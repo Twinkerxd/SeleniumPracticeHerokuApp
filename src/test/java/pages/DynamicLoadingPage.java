@@ -7,10 +7,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DynamicLoadingPage extends BasePage {
-    @FindBy(xpath = "//a[@href='/dynamic_loading/1']") private WebElement example1;
-    @FindBy(xpath = "//a[@href='/dynamic_loading/2']") private WebElement example2;
-    @FindBy(xpath = "//div[@id='finish']//h4") private WebElement hiddenText;
-    @FindBy(xpath = "//button") private WebElement startButton;
+    @FindBy(xpath = "//a[@href='/dynamic_loading/1']")
+    private WebElement example1;
+
+    @FindBy(xpath = "//a[@href='/dynamic_loading/2']")
+    private WebElement example2;
+
+    @FindBy(xpath = "//div[@id='finish']//h4")
+    private WebElement hiddenText;
+
+    @FindBy(xpath = "//button")
+    private WebElement startButton;
 
     public DynamicLoadingPage() {
         PageFactory.initElements(driver, this);

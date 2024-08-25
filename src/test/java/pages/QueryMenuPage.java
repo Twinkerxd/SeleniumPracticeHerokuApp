@@ -7,9 +7,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class QueryMenuPage extends BasePage {
-    @FindBy(id = "ui-id-3") private WebElement enabled;
-    @FindBy(id = "ui-id-4") private WebElement downloads;
-    @FindBy(id = "ui-id-5") private WebElement pdf;
+    @FindBy(id = "ui-id-3")
+    private WebElement enabled;
+
+    @FindBy(id = "ui-id-4")
+    private WebElement downloads;
+
+    @FindBy(id = "ui-id-5")
+    private WebElement pdf;
 
     public QueryMenuPage() {
         PageFactory.initElements(driver, this);

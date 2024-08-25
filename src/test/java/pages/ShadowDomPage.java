@@ -9,10 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ShadowDomPage extends BasePage {
-    @FindBy(xpath = "//my-paragraph[1]") private WebElement myParagraphElement;
+    @FindBy(xpath = "//my-paragraph[1]")
+    private WebElement myParagraphElement;
 
     public ShadowDomPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @Step("Getting hidden shadow dom text")

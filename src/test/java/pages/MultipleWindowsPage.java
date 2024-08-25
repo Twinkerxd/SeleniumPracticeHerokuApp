@@ -9,8 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 
 public class MultipleWindowsPage extends BasePage {
-    @FindBy(xpath = "//a[@href='/windows/new']") private WebElement clickHereButton;
-    @FindBy(xpath = "//h3") private WebElement header;
+    @FindBy(xpath = "//a[@href='/windows/new']")
+    private WebElement clickHereButton;
+
+    @FindBy(xpath = "//h3")
+    private WebElement header;
 
     public MultipleWindowsPage() {
         PageFactory.initElements(driver, this);

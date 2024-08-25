@@ -9,10 +9,17 @@ import org.openqa.selenium.support.PageFactory;
 import java.io.File;
 
 public class FileUploadPage extends BasePage {
-    @FindBy(linkText = "File Upload") private WebElement fileUpdateLink;
-    @FindBy(id = "file-upload") private WebElement chooseFileButton;
-    @FindBy(id = "file-submit") private WebElement uploadButton;
-    @FindBy(css = "h3") private WebElement title;
+    @FindBy(linkText = "File Upload")
+    private WebElement fileUpdateLink;
+
+    @FindBy(id = "file-upload")
+    private WebElement chooseFileButton;
+
+    @FindBy(id = "file-submit")
+    private WebElement uploadButton;
+
+    @FindBy(css = "h3")
+    private WebElement title;
 
     public FileUploadPage() {
         PageFactory.initElements(driver, this);
